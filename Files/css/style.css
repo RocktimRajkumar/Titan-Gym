@@ -1,0 +1,380 @@
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+div {
+    display: block;
+}
+
+
+.login-page {
+    background: #303641;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.428571429;
+    color: #949494;
+    display: block;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.login-page .login-header {
+    position: relative;
+    background: #373e4a;
+    padding: 100px 0;
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-header.login-caret:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: 0;
+    margin-left: -12.5px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 13px 12.5px 0 12.5px;
+    border-color: #373e4a transparent transparent transparent;
+    bottom: -13px;
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-content {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-content a {
+    color: #949494;
+}
+
+a {
+    text-decoration: none;
+    background: transparent;
+}
+
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+
+.logo img{
+    width: 220px;
+    height: 200px;
+}
+
+.login-page .login-header .description {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    transition: all 550ms ease-in-out;
+}
+p {
+    margin: 0 0 8.5px;
+    font-size: 12px;
+}
+
+p {
+    display: block;
+}
+
+.login-page .login-progressbar-indicator {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 100%;
+    margin-top: 80px;
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translateY(100px) scale(0.2);
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-progressbar-indicator h3 {
+    color: #fff;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+h3, .h3 {
+    font-size: 21px;
+}
+h1, h2, h3 {
+    margin-top: 17px;
+    margin-bottom: 8.5px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Noto Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #373e4a;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.login-page .login-progressbar {
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-progressbar div {
+    width: 0%;
+    transition: 700ms all cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+.login-page .login-form {
+    position: relative;
+    padding-top: 60px;
+    transition: all 550ms ease-in-out;
+}
+
+.login-page .login-content {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.login-page .login-form .form-group .input-group {
+    background: #373e4a;
+    border: 1px solid #373e4a;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    transition: all 300ms ease-in-out;
+    background-clip: padding-box;
+    border-radius: 3px;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.login-page .login-form .form-group .input-group .input-group-addon {
+    position: relative;
+}
+.login-page .login-form .form-group .input-group .input-group-addon, .login-page .login-form .form-group .input-group .form-control {
+    background: transparent;
+    border: 0;
+}
+.input-group-addon:first-child {
+    border-right: 0;
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555555;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    color: #919191;
+}
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: table-cell;
+}
+
+.login-page .login-form .form-group .input-group .input-group-addon:after {
+    position: absolute;
+    display: block;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #454a54;
+    transform: scaleY(.56);
+}
+
+
+
+
+
+
+
+.login-page .login-form .form-group .input-group .form-control {
+    color: #ffffff;
+}
+.login-page .login-form .form-group .input-group .input-group-addon, .login-page .login-form .form-group .input-group .form-control {
+    background: transparent;
+    border: 0;
+}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child) {
+    
+    border-top-left-radius: 0px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0px;
+    background-clip: padding-box;
+    border-bottom-left-radius: 0;
+}
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: table-cell;
+}
+.input-group .form-control {
+    width: 100%;
+    margin-bottom: 0;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 31px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    color: #555555;
+    outline:none;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+
+input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 1px 0px;
+}
+
+input {
+
+    background-color: white;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+
+.login-page .login-form .form-group {
+    margin-bottom: 20px;
+    transition: all 550ms ease-in-out;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #303641;
+    border-color: #303641;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 3px;
+    user-select: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+
+.login-page .login-bottom-links {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.login-page .login-bottom-links .link {
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 550ms ease-in-out;
+}
+.login-page .login-bottom-links a {
+    transition: all 300ms ease-in-out;
+}
+.login-page .login-content a {
+    color: #949494;
+}
+a {
+    color: #373e4a;
+    text-decoration: none;
+}
+a {
+    background: transparent;
+}
+a {
+    color: #373e4a;
+}
+
+.login-page .btn-primary:hover{
+    background:#1F232A;
+}
+
+
