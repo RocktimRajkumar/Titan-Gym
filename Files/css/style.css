@@ -377,4 +377,263 @@ a {
     background:#1F232A;
 }
 
+/*============Admin index.php=======*/
 
+.page-container {
+    position: relative;
+    padding-left: 280px;
+}
+
+.page-container .sidebar-menu {
+    position: absolute;
+    width: 280px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #303641;
+    color: #aaabae;
+    z-index: 1;
+    min-height: 796px;
+    box-sizing: border-box;
+}
+
+.page-container .sidebar-menu .logo-env {
+    width: 100%;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+.page-container.sidebar-collapsed {
+    padding-left: 65px;
+}
+
+.page-container.sidebar-collapsed .sidebar-menu {
+    z-index: 4;
+    width: 65px;
+}
+
+.page-container.sidebar-collapsed .sidebar-menu .logo-env {
+    display: block;
+    padding: 20px;
+}
+
+.page-container .sidebar-menu .logo-env:before, .page-container .sidebar-menu .logo-env:after {
+    content: " ";
+    display: table;
+}
+
+
+.page-container.sidebar-collapsed .sidebar-menu .logo-env > div.logo {
+    overflow: hidden;
+    width: 0;
+}
+
+.page-container .sidebar-menu .logo-env > div {
+    display: block;
+    vertical-align: middle;
+    white-space: nowrap;
+    float: left;
+}
+
+.page-container .sidebar-menu .logo-env > div > a {
+    display: inline-block;
+    color: #aaabae;
+}
+
+.page-container.sidebar-collapsed .sidebar-menu .logo-env > div.sidebar-collapse {
+    display: block;
+    padding: 0;
+    left: 3px;
+}
+.page-container .sidebar-menu .logo-env > div.sidebar-collapse, .page-container .sidebar-menu .logo-env > div.sidebar-mobile-menu {
+    position: relative;
+    float: right;
+}
+
+.page-container .sidebar-menu .logo-env > div.sidebar-collapse a, .page-container .sidebar-menu .logo-env > div.sidebar-mobile-menu a {
+    display: inline-block;
+    border: 1px solid #454a54;
+    text-align: center;
+    padding: 0;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 5px 2px;
+    background-clip: padding-box;
+    border-radius: 3px;
+    transition: all 200ms ease-in-out;
+}
+
+.page-container .sidebar-menu .logo-env > div > a {
+    display: inline-block;
+    color: #aaabae;
+}
+
+.page-container .sidebar-menu .logo-env .logo img {
+    width: 180px;
+    height: 150px;
+}
+
+.page-container.sidebar-collapsed .sidebar-menu .logo-env .logo img {
+    width: 180px;
+    height: 30px;
+}
+
+.page-container .sidebar-menu .logo-env:after {
+    clear: both;
+}
+.page-container .sidebar-menu .logo-env:before, .page-container .sidebar-menu .logo-env:after {
+    content: " ";
+    display: table;
+}
+.page-container .sidebar-menu .logo-env:after {
+    clear: both;
+}
+.page-container .sidebar-menu .logo-env:before, .page-container .sidebar-menu .logo-env:after {
+    content: " ";
+    display: table;
+}
+
+/*======= Nav header =========*/
+.page-container .sidebar-menu #main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 8.5px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+}
+
+.page-container .sidebar-menu #main-menu li {
+    position: relative;
+    margin: 0;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(69, 74, 84, 0.7);
+}
+
+li {
+    display: list-item;
+}
+
+.page-container .sidebar-menu #main-menu li.active > a {
+    background-color: #2b303a;
+    color: #ffffff;
+}
+
+.page-container .sidebar-menu #main-menu li a {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #aaabae;
+    z-index: 2;
+    transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.page-container .sidebar-menu #main-menu li a i {
+    top: 1px;
+}
+.page-container .sidebar-menu #main-menu li i {
+    position: relative;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+
+.page-container .sidebar-menu #main-menu li a span {
+    transition: 350ms opacity ease-in-out;
+}
+
+.page-container .sidebar-menu #main-menu li.has-sub > a:before {
+    position: relative;
+    content: '\e877';
+    content: '\e879';
+    display: inline-block;
+    font-family: 'Entypo';
+    color: #454a54;
+    color: #FFF;
+    float: right;
+    font-size: 15px;
+    margin-left: 13px;
+    top: 0px;
+    transition: all 300ms ease-in-out;
+}
+
+.page-container .sidebar-menu #main-menu li.has-sub.opened > a:before {
+    transform: rotate(90deg);
+}
+
+.page-container .sidebar-menu #main-menu li ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(69, 74, 84, 0.4);
+    display: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+ul ul, ol ul, ul ol, ol ol {
+    margin-bottom: 0;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 8.5px;
+}
+
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > a > span:not(.badge) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 65px;
+    margin-top: -1px;
+    padding: 12px 10px;
+    background: #303641;
+    border-top: 1px solid #454a54;
+    border-bottom: 1px solid #454a54;
+    width: 250px;
+    visibility: hidden;
+    border-radius: 0px 3px 3px 0px;
+    background-clip: padding-box;
+    border-radius: 0 3px 3px 0;
+    opacity: 0;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > a span {
+    transition: none;
+}
+.page-container .sidebar-menu #main-menu li a span {
+    transition: 350ms opacity ease-in-out;
+}
+
+.page-container .sidebar-menu #main-menu li ul.visible {
+    display: block;
+}
+
+.page-container .sidebar-menu #main-menu li ul > li {
+    border-bottom: 1px solid rgba(69, 74, 84, 0.4);
+}
+
+.page-container .sidebar-menu #main-menu li.active > a {
+    background-color: #2b303a;
+    color: #ffffff;
+}
+
+.page-container .sidebar-menu #main-menu li ul > li:last-child {
+    border-bottom: 0;
+}
+
+.page-container .sidebar-menu #main-menu li ul > li > a {
+    background-color: #2b303a;
+    padding-left: 40px;
+}
