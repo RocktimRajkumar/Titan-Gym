@@ -6,7 +6,7 @@
 				
 	<li><a href="payments.php"><i class="entypo-star"></i><span>Payments</span></a></li>
 
-	<li class="has-sub" id="hassubopen"><a href="#" onclick="memberExpand()"><i class="entypo-users"></i><span>Members</span></a>
+	<li class="" id="hassubopen"><a href="#" onclick="memberExpand()"><i class="entypo-users"></i><span>Members</span></a>
 		<ul id="memExpand">
 			<li class="active">
 				<a href="view_mem.php"><span>View Members</span></a></li>

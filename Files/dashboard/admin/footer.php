@@ -1,1 +1,1 @@
-<footer class="main"> &copy; 2015 <strong>Sam's Slim Gym </strong></footer>
+<footer class="main">Copyright &copy; 2018 <strong>Titan Gym </strong></footer>

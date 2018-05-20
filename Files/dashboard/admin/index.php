@@ -11,10 +11,11 @@ page_protect();
 
     <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
     <script type="text/javascript" src="../../js/Script.js"></script>
+    <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 
 </head>
-    <body class="page-body  page-fade">
+    <body class="page-body  page-fade" onload="initializeMember()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
@@ -71,7 +72,7 @@ page_protect();
 					
 				</div>
 
-			<h2>Sam's Slim Gym</h2>
+			<h2>Titan Gym</h2>
 
 			<hr>
 
