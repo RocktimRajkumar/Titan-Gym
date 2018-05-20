@@ -638,3 +638,87 @@ ul, ol {
     padding-left: 40px;
 }
 
+
+
+
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover.has-sub > a,
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover.has-sub > a {
+  cursor: default;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover.has-sub > a > span:not(.badge),
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover.has-sub > a > span:not(.badge) {
+  border-radius: 0px 3px 0px 0px;
+  background-clip: padding-box;
+  border-radius: 0 3px 0 0;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover.has-sub > a:hover,
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover.has-sub > a:hover {
+  color: #aaabae;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover > a > span,
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover > a > span {
+  visibility: visible;
+  opacity: 1;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover a span.badge,
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover a span.badge {
+  display: block;
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover > ul,
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul {
+
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    top: auto;
+    left: 65px;
+    width: 250px;
+    border-radius: 0px 0px 3px 0px;
+    border-radius: 0 0 3px 0;
+    opacity: 0;
+
+}
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li ul {
+
+    border-top-color: #454a54;
+
+}
+.page-container .sidebar-menu #main-menu li ul {
+
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(69, 74, 84, 0.4);
+        border-top-color: rgba(69, 74, 84, 0.4);
+    display: none;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li {
+
+    border-bottom: 1px solid #454a54;
+
+}
+.page-container .sidebar-menu #main-menu li ul > li {
+
+    border-bottom: 1px solid rgba(69, 74, 84, 0.4);
+
+}
+.page-container .sidebar-menu #main-menu li {
+
+    position: relative;
+    margin: 0;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(69, 74, 84, 0.7);
+
+}
