@@ -66,7 +66,7 @@
 			</form>
 		
 				<div class="login-bottom-links">
-					<a href="ajax_f.php" class="link">Forgot your password?</a>
+					<a href="forgot_password.php" class="link">Forgot your password?</a>
 				</div>			
 		</div>
 		

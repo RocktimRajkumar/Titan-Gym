@@ -77,7 +77,7 @@
 								Login In
 								<i class="entypo-login"></i>
 							</button>
-							<button type="button" class="btn btn-primary">Cancel</button>
+							<a href="./index.php"><button  type="button" class="btn btn-primary">Cancel</button></a>
 						</div>
 					</form>
 				

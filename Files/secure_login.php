@@ -22,7 +22,7 @@ $pass_key     = stripslashes($pass_key);
 
 $user_id_auth = mysqli_real_escape_string($con, $user_id_auth);
 $pass_key     = mysqli_real_escape_string($con, $pass_key);
-$sql          = "SELECT * FROM auth_user WHERE login_id='$user_id_auth' and pass_key='$pass_key'";
+$sql          = "SELECT * FROM admin WHERE username='$user_id_auth' and pass_key='$pass_key'";
 $result       = mysqli_query($con, $sql);
 $count        = mysqli_num_rows($result);
 if ($count == 1) {
@@ -32,8 +32,7 @@ if ($count == 1) {
     $_SESSION['user_data']  = $user_id_auth;
     $_SESSION['logged']     = "start";
     // $_SESSION['auth_level'] = $row['level'];
-    $_SESSION['sex']        = $row['sex'];
-    $_SESSION['full_name']  = $row['name'];
+    $_SESSION['full_name']  = $user_id_auth;
     // $auth_l_x               = $_SESSION['auth_level'];
     // if ($auth_l_x == 5) {
         header("location: ./dashboard/admin/");
