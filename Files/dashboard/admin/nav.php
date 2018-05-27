@@ -6,7 +6,7 @@
 				
 	<li><a href="payments.php"><i class="entypo-star"></i><span>Payments</span></a></li>
 
-	<li class="" id="hassubopen"><a href="#" onclick="memberExpand()"><i class="entypo-users"></i><span>Members</span></a>
+	<li class="" id="hassubopen"><a href="#" onclick="memberExpand(1)"><i class="entypo-users"></i><span>Members</span></a>
 		<ul id="memExpand">
 			<li class="active">
 				<a href="view_mem.php"><span>View Members</span></a></li>
@@ -17,9 +17,9 @@
 
 	<li><a href="new_health_status.php"><i class="entypo-user-add"></i><span>Health Status</span></a> 	
 
-		<li><a href="#"><i class="entypo-quote"></i><span>Plan</span></a>
+		<li class="" id="planhassubopen"><a href="#" onclick="memberExpand(2)"><i class="entypo-quote"></i><span>Plan</span></a>
 
-		<ul>
+		<ul id="planExpand">
 			<li class="active">
 				<a href="new_plan.php"><span>New Plan</span></a></li>
 

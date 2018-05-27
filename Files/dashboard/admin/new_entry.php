@@ -82,7 +82,7 @@ page_protect();
 				<label for="memberid">Memebership ID : </label>
 				<input type="text" name="m_id" value="<?php echo time(); ?>" readonly/>	
 			</div>
-			
+
 			<div class="form_group">
 				<label for="username">Name : </label>
 				<input type="text" name="u_name" id="username"/>	
@@ -153,6 +153,7 @@ page_protect();
 					?>
 					
 				</select>
+
 			</div>
 
 			<div class="form_group">
