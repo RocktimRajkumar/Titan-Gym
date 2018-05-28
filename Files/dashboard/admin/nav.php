@@ -23,7 +23,7 @@
 			<li class="active">
 				<a href="new_plan.php"><span>New Plan</span></a></li>
 
-			<li><a href="change_values.php"><span>Edit Subsciption Details</span></a></li>
+			<li><a href="view_plan.php"><span>Edit Subsciption Details</span></a></li>
 		</ul>
 
 	<li><a href="new_plan.php"><i class="entypo-box"></i><span>Overview</span></a>
