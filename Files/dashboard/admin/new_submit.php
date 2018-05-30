@@ -23,9 +23,9 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
         if($result){
           $value=mysqli_fetch_row($result);
           $d=strtotime("+".$value[4]." Months");
-          $cdate=date("m-d-Y")
-          $exdate=date("m-d-Y",$d);
-          $query2="insert into enrolls_to(pid,uid,paid_date,expire,renewal) values($plan,'$memID','$cdate','$exdate','yes'";
+          $cdate=date("Y-m-d");
+          $expiredate=date("Y-m-d",$d);
+          $query2="insert into enrolls_to(pid,uid,paid_date,expire,renewal) values($plan,'$memID','$cdate','$expiredate','yes')";
           if(mysqli_query($con,$query2)==1){
              echo "<head><script>alert('Member Added ');</script></head></html>";
              echo "<meta http-equiv='refresh' content='0; url=new_entry.php'>";
@@ -33,6 +33,8 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
           else{
             echo "<head><script>alert('Member Added Failed');</script></head></html>";
             echo "error: ".mysqli_error($con);
+             $query3 = "DELETE FROM users WHERE userid='$memID'";
+             mysqli_query($con,$query3);
           }
 
          
@@ -41,6 +43,8 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
         {
           echo "<head><script>alert('Member Added Failed');</script></head></html>";
           echo "error: ".mysqli_error($con);
+          $query3 = "DELETE FROM users WHERE userid='$memID'";
+          mysqli_query($con,$query3);
         }
 
     }

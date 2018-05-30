@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 30/05/2018 14:22:58
+ Date: 30/05/2018 14:41:01
 */
 
 SET NAMES utf8mb4;
@@ -51,7 +51,7 @@ INSERT INTO `admin` VALUES ('admin1', 'admin1', 'admin1');
 -- ----------------------------
 DROP TABLE IF EXISTS `enrolls_to`;
 CREATE TABLE `enrolls_to`  (
-  `et_id` int(5) NOT NULL,
+  `et_id` int(5) NOT NULL AUTO_INCREMENT,
   `pid` int(5) NOT NULL,
   `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `paid_date` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
@@ -62,7 +62,12 @@ CREATE TABLE `enrolls_to`  (
   INDEX `enrolls_to`(`pid`) USING BTREE,
   CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `enrolls_to` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of enrolls_to
+-- ----------------------------
+INSERT INTO `enrolls_to` VALUES (2, 4, '1527671381', '2018-05-30', '2018-08-30', 'yes');
 
 -- ----------------------------
 -- Table structure for health_status
@@ -94,7 +99,12 @@ CREATE TABLE `plan`  (
   `amount` int(10) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of plan
+-- ----------------------------
+INSERT INTO `plan` VALUES (4, 'PMZBJS', 'Beginner', 'Basic', '3', 1400);
 
 -- ----------------------------
 -- Table structure for timetable
@@ -132,5 +142,10 @@ CREATE TABLE `users`  (
   UNIQUE INDEX `email`(`email`) USING BTREE,
   INDEX `userid`(`userid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES ('1527671381', 'Rajkumar Rocktim Narayan Singha', 'Male', '8011806053', 'rocktim53@gmail.com', '1997-12-02', '2018-05-30');
 
 SET FOREIGN_KEY_CHECKS = 1;
