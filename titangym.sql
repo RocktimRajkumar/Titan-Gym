@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 29/05/2018 20:58:35
+ Date: 30/05/2018 12:21:28
 */
 
 SET NAMES utf8mb4;
@@ -22,12 +22,13 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address`  (
-  `id` int(12) NULL DEFAULT NULL,
+  `id` int(12) NOT NULL,
   `streetName` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `state` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `city` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  INDEX `id`(`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  INDEX `user_id`(`id`) USING BTREE,
+  CONSTRAINT `user_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for admin
@@ -38,7 +39,7 @@ CREATE TABLE `admin`  (
   `pass_key` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `securekey` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`username`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin
@@ -50,34 +51,35 @@ INSERT INTO `admin` VALUES ('admin1', 'admin1', 'admin1');
 -- ----------------------------
 DROP TABLE IF EXISTS `enrolls_to`;
 CREATE TABLE `enrolls_to`  (
+  `et_id` int(5) NOT NULL,
   `pid` int(5) NOT NULL,
-  `id` int(12) NOT NULL,
-  `paid_date` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `uid` int(12) NOT NULL,
+  `paid_date` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `expire` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `renewal` varchar(4) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  INDEX `planid`(`pid`) USING BTREE,
-  INDEX `userID`(`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of enrolls_to
--- ----------------------------
-INSERT INTO `enrolls_to` VALUES (1, 1, '1212', '112', '112');
+  `renewal` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`et_id`) USING BTREE,
+  INDEX `enrolls_to_ibfk_1`(`pid`) USING BTREE,
+  INDEX `enrolls_to_ibfk_2`(`uid`) USING BTREE,
+  CONSTRAINT `enrolls_to_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `enrolls_to_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for health_status
 -- ----------------------------
 DROP TABLE IF EXISTS `health_status`;
 CREATE TABLE `health_status`  (
-  `hid` int(5) NOT NULL AUTO_INCREMENT,
+  `hid` int(5) NOT NULL,
   `calorie` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `height` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `weight` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `fat` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `remarks` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `id` int(12) NOT NULL,
-  PRIMARY KEY (`hid`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 13 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`hid`) USING BTREE,
+  INDEX `health_status_ibfk_1`(`id`) USING BTREE,
+  CONSTRAINT `health_status_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for plan
@@ -90,13 +92,14 @@ CREATE TABLE `plan`  (
   `description` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `validity` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `amount` int(10) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `pid`(`pid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of plan
 -- ----------------------------
-INSERT INTO `plan` VALUES (1, 'XFJGH', 'Summer Plan', 'well plan', '3 months', 2500);
+INSERT INTO `plan` VALUES (1, 'CXWEG', 'Summer Plan', 'use this plan at 50%', '3month', 1400);
 
 -- ----------------------------
 -- Table structure for timetable
@@ -114,8 +117,9 @@ CREATE TABLE `timetable`  (
   `day7` varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `pid` int(5) NULL DEFAULT NULL,
   PRIMARY KEY (`tid`) USING BTREE,
-  INDEX `pid`(`pid`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  INDEX `plan_id`(`pid`) USING BTREE,
+  CONSTRAINT `plan_id` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for users
@@ -132,6 +136,6 @@ CREATE TABLE `users`  (
   `joining_date` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `email`(`email`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 10 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
