@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 30/05/2018 12:21:28
+ Date: 30/05/2018 14:22:58
 */
 
 SET NAMES utf8mb4;
@@ -22,12 +22,12 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address`  (
-  `id` int(12) NOT NULL,
+  `id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `streetName` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `state` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `city` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  INDEX `user_id`(`id`) USING BTREE,
-  CONSTRAINT `user_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  INDEX `userID`(`id`) USING BTREE,
+  CONSTRAINT `userID` FOREIGN KEY (`id`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -53,15 +53,15 @@ DROP TABLE IF EXISTS `enrolls_to`;
 CREATE TABLE `enrolls_to`  (
   `et_id` int(5) NOT NULL,
   `pid` int(5) NOT NULL,
-  `uid` int(12) NOT NULL,
+  `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `paid_date` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `expire` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `renewal` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`et_id`) USING BTREE,
-  INDEX `enrolls_to_ibfk_1`(`pid`) USING BTREE,
-  INDEX `enrolls_to_ibfk_2`(`uid`) USING BTREE,
-  CONSTRAINT `enrolls_to_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `enrolls_to_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  INDEX `user_ID`(`uid`) USING BTREE,
+  INDEX `enrolls_to`(`pid`) USING BTREE,
+  CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `enrolls_to` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -75,10 +75,10 @@ CREATE TABLE `health_status`  (
   `weight` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `fat` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `remarks` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `id` int(12) NOT NULL,
+  `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`hid`) USING BTREE,
-  INDEX `health_status_ibfk_1`(`id`) USING BTREE,
-  CONSTRAINT `health_status_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  INDEX `userID_idx`(`uid`) USING BTREE,
+  CONSTRAINT `uID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -94,12 +94,7 @@ CREATE TABLE `plan`  (
   `amount` int(10) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of plan
--- ----------------------------
-INSERT INTO `plan` VALUES (1, 'CXWEG', 'Summer Plan', 'use this plan at 50%', '3month', 1400);
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for timetable
@@ -126,7 +121,6 @@ CREATE TABLE `timetable`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
   `userid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `username` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `gender` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -134,8 +128,9 @@ CREATE TABLE `users`  (
   `email` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `dob` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `joining_date` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `email`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`userid`) USING BTREE,
+  UNIQUE INDEX `email`(`email`) USING BTREE,
+  INDEX `userid`(`userid`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -111,7 +111,7 @@ page_protect();
 			 <div class="form-group">
 
 			 	<label for="planVal">Plan Validity : </label>
-			 	<input type="text" name="planval" id="planVal">
+			 	<input type="number" name="planval" id="planVal" placeholder="Enter validity in months">
 			
 			</div>
 
