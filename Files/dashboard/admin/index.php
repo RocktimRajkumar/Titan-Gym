@@ -111,10 +111,8 @@ page_protect();
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
 						<h2>Total <br>Members</h2><br>	
 							<?php
-							$date  = date('Y-m');
-							$query = "select COUNT(*) from user_data WHERE wait='no'";
+							$query = "select COUNT(*) from users";
 
-							//echo $query;
 							$result = mysqli_query($con, $query);
 							$i      = 1;
 							if (mysqli_affected_rows($con) != 0) {
@@ -135,7 +133,7 @@ page_protect();
 						<h2>Joined This Month</h2><br>	
 							<?php
 							$date  = date('Y-m');
-							$query = "select COUNT(*) from user_data WHERE wait='no'";
+							$query = "select COUNT(*) from enrolls_to WHERE  paid_date LIKE '$date%'";
 
 							//echo $query;
 							$result = mysqli_query($con, $query);
@@ -155,20 +153,19 @@ page_protect();
 				<div class="tile-stats tile-blue">
 					<div class="icon"><i class="entypo-rss"></i></div>
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
-						<h2>Income This Month</h2><br>	
+						<h2>Total Plan Available</h2><br>	
 							<?php
-							$date  = date('Y-m');
-							$query = "select * from subsciption WHERE  paid_date LIKE '$date%'";
+							$query = "select COUNT(*) from plan";
 
 							//echo $query;
 							$result  = mysqli_query($con, $query);
-							$revenue = 0;
+							$i = 1;
 							if (mysqli_affected_rows($con) != 0) {
 							    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-							        $revenue = $row['total'] + $revenue;
+							        echo $row['COUNT(*)'];
 							    }
 							}
-							echo $revenue;
+							$i = 1;
 							?>
 						</div>
 				</div>
