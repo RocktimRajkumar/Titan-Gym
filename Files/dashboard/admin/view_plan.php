@@ -93,7 +93,7 @@ page_protect();
 					<?php
 
 
-					$query  = "select * from plan ORDER BY id DESC";
+					$query  = "select * from plan ORDER BY amount DESC";
 					//echo $query;
 					$result = mysqli_query($con, $query);
 					$sno    = 1;

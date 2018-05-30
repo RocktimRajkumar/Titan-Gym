@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 30/05/2018 20:18:08
+ Date: 30/05/2018 21:48:15
 */
 
 SET NAMES utf8mb4;
@@ -23,7 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address`  (
   `id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `streetName` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `streetName` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `state` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `city` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   INDEX `userID`(`id`) USING BTREE,
@@ -33,7 +33,7 @@ CREATE TABLE `address`  (
 -- ----------------------------
 -- Records of address
 -- ----------------------------
-INSERT INTO `address` VALUES ('1527691595', 'dewal road', 'Assam', 'shivsagar');
+INSERT INTO `address` VALUES ('1527696954', 'Rajbari Lane Behind Eleye Cinema Hall', 'ASSAM', 'Jorhat');
 
 -- ----------------------------
 -- Table structure for admin
@@ -57,23 +57,22 @@ INSERT INTO `admin` VALUES ('admin1', 'admin1', 'admin1');
 DROP TABLE IF EXISTS `enrolls_to`;
 CREATE TABLE `enrolls_to`  (
   `et_id` int(5) NOT NULL AUTO_INCREMENT,
-  `pid` int(5) NOT NULL,
+  `pid` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `paid_date` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `expire` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `renewal` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`et_id`) USING BTREE,
   INDEX `user_ID`(`uid`) USING BTREE,
-  INDEX `enrolls_to`(`pid`) USING BTREE,
-  CONSTRAINT `enrolls_to` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  INDEX `plan_ID_idx`(`pid`) USING BTREE,
+  CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `plan_ID` FOREIGN KEY (`pid`) REFERENCES `plan` (`pid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of enrolls_to
 -- ----------------------------
-INSERT INTO `enrolls_to` VALUES (3, 4, '1527671796', '2018-05-30', '2018-08-30', 'yes');
-INSERT INTO `enrolls_to` VALUES (6, 4, '1527691595', '2018-05-30', '2018-08-30', 'yes');
+INSERT INTO `enrolls_to` VALUES (8, 'TYLFGN', '1527696954', '2018-05-30', '1970-01-01', 'yes');
 
 -- ----------------------------
 -- Table structure for health_status
@@ -90,32 +89,33 @@ CREATE TABLE `health_status`  (
   PRIMARY KEY (`hid`) USING BTREE,
   INDEX `userID_idx`(`uid`) USING BTREE,
   CONSTRAINT `uID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of health_status
 -- ----------------------------
-INSERT INTO `health_status` VALUES (1, NULL, NULL, NULL, NULL, NULL, '1527691595');
+INSERT INTO `health_status` VALUES (3, NULL, NULL, NULL, NULL, NULL, '1527696954');
 
 -- ----------------------------
 -- Table structure for plan
 -- ----------------------------
 DROP TABLE IF EXISTS `plan`;
 CREATE TABLE `plan`  (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
   `pid` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `planName` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `description` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `validity` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `amount` int(10) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
+  PRIMARY KEY (`pid`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of plan
 -- ----------------------------
-INSERT INTO `plan` VALUES (4, 'PMZBJS', 'Beginner', 'Basic', '3', 1400);
+INSERT INTO `plan` VALUES ('BVDPWN', 'dfd', 'sdf', '2', 532);
+INSERT INTO `plan` VALUES ('PMZBJS', 'Beginner', 'Basic', '3', 1400);
+INSERT INTO `plan` VALUES ('TYLFGN', 'monthly', 'regular', '1', 500);
 
 -- ----------------------------
 -- Table structure for timetable
@@ -131,11 +131,16 @@ CREATE TABLE `timetable`  (
   `day5` varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `day6` varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `day7` varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pid` int(5) NULL DEFAULT NULL,
+  `pid` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`tid`) USING BTREE,
-  INDEX `plan_id`(`pid`) USING BTREE,
-  CONSTRAINT `plan_id` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  INDEX `plan_id_idx`(`pid`) USING BTREE,
+  CONSTRAINT `planID` FOREIGN KEY (`pid`) REFERENCES `plan` (`pid`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of timetable
+-- ----------------------------
+INSERT INTO `timetable` VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'BVDPWN');
 
 -- ----------------------------
 -- Table structure for users
@@ -157,7 +162,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1527671796', 'Joy Saha', 'Male', '8974561230', 'joy@gmail.com', '2018-05-09', '2018-05-22');
-INSERT INTO `users` VALUES ('1527691595', 'hello world', 'Female', '2345678912', 'hello@gmail.com', '1995-12-07', '2018-05-30');
+INSERT INTO `users` VALUES ('1527696954', 'Rajkumar Rocktim Narayan Singha', 'Male', '8011806053', 'rocktim53@gmail.com', '1997-12-02', '2018-05-30');
 
 SET FOREIGN_KEY_CHECKS = 1;

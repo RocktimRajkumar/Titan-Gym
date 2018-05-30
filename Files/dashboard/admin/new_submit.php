@@ -19,7 +19,7 @@ page_protect();
 $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) values('$uname','$gender','$phn','$email','$dob','$jdate','$memID')";
     if(mysqli_query($con,$query)==1){
       //Retrieve information of plan selected by user
-      $query1="select * from plan where id=$plan";
+      $query1="select * from plan where pid='$plan'";
       $result=mysqli_query($con,$query1);
 
         if($result){
@@ -28,7 +28,7 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
           $cdate=date("Y-m-d"); //current date
           $expiredate=date("Y-m-d",$d); //adding validity retrieve from plan to current date
           //inserting into enrolls_to table of corresponding userid
-          $query2="insert into enrolls_to(pid,uid,paid_date,expire,renewal) values($plan,'$memID','$cdate','$expiredate','yes')";
+          $query2="insert into enrolls_to(pid,uid,paid_date,expire,renewal) values('$plan','$memID','$cdate','$expiredate','yes')";
           if(mysqli_query($con,$query2)==1){
 
             $query4="insert into health_status(uid) values('$memID')";
