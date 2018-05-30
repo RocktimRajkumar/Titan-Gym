@@ -90,35 +90,35 @@ page_protect();
 							}
 
 						?>
-				<input type="text" name="planID" id="planID" readonly value="<?php echo getRandomWord(); ?>">
+				<input type="text" name="planid" id="planID" readonly value="<?php echo getRandomWord(); ?>">
 
 			</div>   
 
 			<div class="form-group">
 
 				<label for="planName">Plan Name : </label>
-				<input type="text" name="planName" id="planName">
+				<input type="text" name="planname" id="planName">
 
 			</div>
 
 			 <div class="form-group">
 
 			 	<label for="planDesc">Plan Description : </label>
-			 	<input type="text" name="planDesc" id="planDesc">
+			 	<input type="text" name="desc" id="planDesc">
 
 			 </div> 
 
 			 <div class="form-group">
 
 			 	<label for="planVal">Plan Validity : </label>
-			 	<input type="text" name="planVal" id="planVal">
+			 	<input type="text" name="planval" id="planVal">
 			
 			</div>
 
 			 <div class="form-group">
 			 
 			 	<label for="planAmnt">Plan Amount : </label>
-			 	<input type="text" name="planAmnt" id="planAmnt">
+			 	<input type="text" name="amount" id="planAmnt">
 			 
 			 </div>
 
