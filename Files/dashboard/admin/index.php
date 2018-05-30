@@ -83,14 +83,19 @@ page_protect();
 						<h2>Paid Income This Month</h2><br>	
 						<?php
 							$date  = date('Y-m');
-							$query = "select * from subsciption WHERE  paid_date LIKE '$date%'";
+							$query = "select * from enrolls_to WHERE  paid_date LIKE '$date%'";
 
 							//echo $query;
 							$result  = mysqli_query($con, $query);
 							$revenue = 0;
 							if (mysqli_affected_rows($con) != 0) {
 							    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-							        $revenue = $row['paid'] + $revenue;
+							    	$query1="select * from plan where pid='".$row['pid']."'";
+							    	$result1=mysqli_query($con,$query1);
+							    	if($result1){
+							    		$value=mysqli_fetch_row($result1);
+							        $revenue = $value[4] + $revenue;
+							    	}
 							    }
 							}
 							echo $revenue;
