@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 30/05/2018 14:41:01
+ Date: 30/05/2018 20:18:08
 */
 
 SET NAMES utf8mb4;
@@ -29,6 +29,11 @@ CREATE TABLE `address`  (
   INDEX `userID`(`id`) USING BTREE,
   CONSTRAINT `userID` FOREIGN KEY (`id`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES ('1527691595', 'dewal road', 'Assam', 'shivsagar');
 
 -- ----------------------------
 -- Table structure for admin
@@ -60,31 +65,37 @@ CREATE TABLE `enrolls_to`  (
   PRIMARY KEY (`et_id`) USING BTREE,
   INDEX `user_ID`(`uid`) USING BTREE,
   INDEX `enrolls_to`(`pid`) USING BTREE,
-  CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `enrolls_to` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  CONSTRAINT `enrolls_to` FOREIGN KEY (`pid`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of enrolls_to
 -- ----------------------------
-INSERT INTO `enrolls_to` VALUES (2, 4, '1527671381', '2018-05-30', '2018-08-30', 'yes');
+INSERT INTO `enrolls_to` VALUES (3, 4, '1527671796', '2018-05-30', '2018-08-30', 'yes');
+INSERT INTO `enrolls_to` VALUES (6, 4, '1527691595', '2018-05-30', '2018-08-30', 'yes');
 
 -- ----------------------------
 -- Table structure for health_status
 -- ----------------------------
 DROP TABLE IF EXISTS `health_status`;
 CREATE TABLE `health_status`  (
-  `hid` int(5) NOT NULL,
-  `calorie` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `height` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `weight` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `fat` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `remarks` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `hid` int(5) NOT NULL AUTO_INCREMENT,
+  `calorie` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `height` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `weight` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `fat` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `remarks` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`hid`) USING BTREE,
   INDEX `userID_idx`(`uid`) USING BTREE,
   CONSTRAINT `uID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of health_status
+-- ----------------------------
+INSERT INTO `health_status` VALUES (1, NULL, NULL, NULL, NULL, NULL, '1527691595');
 
 -- ----------------------------
 -- Table structure for plan
@@ -146,6 +157,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1527671381', 'Rajkumar Rocktim Narayan Singha', 'Male', '8011806053', 'rocktim53@gmail.com', '1997-12-02', '2018-05-30');
+INSERT INTO `users` VALUES ('1527671796', 'Joy Saha', 'Male', '8974561230', 'joy@gmail.com', '2018-05-09', '2018-05-22');
+INSERT INTO `users` VALUES ('1527691595', 'hello world', 'Female', '2345678912', 'hello@gmail.com', '1995-12-07', '2018-05-30');
 
 SET FOREIGN_KEY_CHECKS = 1;
