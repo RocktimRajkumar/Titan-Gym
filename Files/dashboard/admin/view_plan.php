@@ -84,7 +84,7 @@ page_protect();
 					<th>Membership ID</th>
 					<th>Plan name</th>
 					<th>Details</th>
-					<th>Days</th>
+					<th>Months</th>
 					<th>Rate</th>
 					<th></th>
 				</tr>

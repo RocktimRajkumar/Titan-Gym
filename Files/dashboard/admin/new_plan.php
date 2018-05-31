@@ -13,6 +13,7 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
+	<link href="a1style.css" rel="stylesheet" type="text/css">
   
 
 </head>
@@ -72,16 +73,20 @@ page_protect();
 					
 				</div>
 
-		<h2>New Plan Details</h2>
-
-		<hr />
-
-		<form action="submit_plan_new.php" method="POST">
-
-			<div class="form-group">
-				
-				<label for="planID">Plan ID :</label>
-				<?php
+	
+		
+		<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:600px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>NEW PLAN DETAILS</h6>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="submit_plan_new.php">
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">PLAN ID:</td>
+           	   <td height="35"><?php
 							function getRandomWord($len = 6)
 							{
 							    $word = array_merge(range('A', 'Z'));
@@ -90,43 +95,41 @@ page_protect();
 							}
 
 						?>
-				<input type="text" name="planid" id="planID" readonly value="<?php echo getRandomWord(); ?>">
-
-			</div>   
-
-			<div class="form-group">
-
-				<label for="planName">Plan Name : </label>
-				<input type="text" name="planname" id="planName">
-
-			</div>
-
-			 <div class="form-group">
-
-			 	<label for="planDesc">Plan Description : </label>
-			 	<input type="text" name="desc" id="planDesc">
-
-			 </div> 
-
-			 <div class="form-group">
-
-			 	<label for="planVal">Plan Validity : </label>
-			 	<input type="number" name="planval" id="planVal" placeholder="Enter validity in months">
-			
-			</div>
-
-			 <div class="form-group">
-			 
-			 	<label for="planAmnt">Plan Amount : </label>
-			 	<input type="text" name="amount" id="planAmnt">
-			 
-			 </div>
-
-			 <div class="form_group">
-				<button type="submit">Create Plan</button>
-			</div>
-
-		</form>
+				<input type="text" name="planid" id="planID" readonly value="<?php echo getRandomWord(); ?>"></td>
+         	   </tr>
+             <tr>
+               <td height="35">PLAN NAME:</td>
+               <td height="35"><input name="planname" id="planName" type="text" placeholder="Enter plan name" size="40"></td>
+             </tr>
+             <tr>
+               <td height="35">PLAN DESCRIPTION</td>
+               <td height="35"><input type="text" name="desc" id="planDesc" placeholder="Enter plan description" size="40"></td>
+             </tr>
+             <tr>
+               <td height="35">PLAN VALIDITY</td>
+               <td height="35"><input type="number" name="planval" id="planVal" placeholder="Enter validity in months" size="40"></td>
+             </tr>
+             
+             <tr>
+               <td height="35">PLAN AMOUNT:</td>
+               <td height="35"><input type="text" name="amount" id="planAmnt" placeholder="Enter plan amount" size="40"></td>
+             </tr>
+             
+            
+             <tr>
+             <tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="CREATE PLAN" >
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+		
+		
 
 			<?php include('footer.php'); ?>
     	</div>
