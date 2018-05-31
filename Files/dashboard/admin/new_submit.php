@@ -24,7 +24,8 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
 
         if($result){
           $value=mysqli_fetch_row($result);
-          $d=strtotime("+".$value[4]." Months");
+          date_default_timezone_set("Asia/Calcutta"); 
+          $d=strtotime("+".$value[3]." Months");
           $cdate=date("Y-m-d"); //current date
           $expiredate=date("Y-m-d",$d); //adding validity retrieve from plan to current date
           //inserting into enrolls_to table of corresponding userid

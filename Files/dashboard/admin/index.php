@@ -82,6 +82,7 @@ page_protect();
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
 						<h2>Paid Income This Month</h2><br>	
 						<?php
+							date_default_timezone_set("Asia/Calcutta"); 
 							$date  = date('Y-m');
 							$query = "select * from enrolls_to WHERE  paid_date LIKE '$date%'";
 
@@ -132,6 +133,7 @@ page_protect();
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
 						<h2>Joined This Month</h2><br>	
 							<?php
+							date_default_timezone_set("Asia/Calcutta"); 
 							$date  = date('Y-m');
 							$query = "select COUNT(*) from enrolls_to WHERE  paid_date LIKE '$date%'";
 
