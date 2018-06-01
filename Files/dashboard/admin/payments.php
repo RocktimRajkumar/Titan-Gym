@@ -80,6 +80,7 @@ page_protect();
 		<table class="table table-bordered datatable" id="table-1">
 			<thead>
 				<tr>
+					<th>Sl.No</th>
 					<th>Membership Expiry</th>
 					<th>Name</th>
 					<th>Member ID</th>
@@ -110,8 +111,8 @@ page_protect();
 					        if (mysqli_affected_rows($con) == 1) {
 					            while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
 					                
-					                
-					                echo "<tr><td>" . $row['expire'] . "</td>";
+					                 echo "<tr><td>".$sno."</td>";
+					                echo "<td>" . $row['expire'] . "</td>";
 					                echo "<td>" . $row1['username'] . "</td>";
 					                echo "<td>" . $row1['userid'] . "</td>";
 					                echo "<td>" . $row1['mobile'] . "</td>";

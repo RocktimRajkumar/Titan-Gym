@@ -79,6 +79,7 @@ page_protect();
 		<table class="table table-bordered datatable" id="table-1">
 			<thead>
 				<tr>
+					<th>Sl.No</th>
 					<th>Membership Expiry</th>
 					<th>Member ID</th>
 					<th>Name</th>
@@ -105,8 +106,9 @@ page_protect();
 							        if (mysqli_affected_rows($con) == 1) {
 							            while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
 							                
-							                
-							                echo "<tr><td>" . $row1['expire'] . "</td>";
+							                echo "<tr><td>".$sno."</td>";
+
+							                echo "<td>" . $row1['expire'] . "</td>";
 							                
 							                echo "<td>" . $row['userid'] . "</td>";
 
@@ -121,8 +123,8 @@ page_protect();
 							                echo "<td>" . $row['joining_date'] ."</td>";
 							                
 							                $sno++;
-							                
-							                echo "<td><form action='read_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='View History ' class='btn btn-info'/></form><form action='edit_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Edit' class='btn btn-warning'/></form><form action='del_member.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Delete ' class='btn btn-danger'/></form></td></tr>";
+							       
+							                echo "<td><form action='read_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='View History ' class='btn btn-info'/></form><form action='edit_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Edit' class='btn btn-warning'/></form><form action='del_member.php' method='post' onsubmit='return ConfirmDelete()'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Delete ' class='btn btn-danger'/></form></td></tr>";
 							                $msgid = 0;
 							            }
 							        }
@@ -132,50 +134,22 @@ page_protect();
 					</tbody>
 				</table>
 
-<script type="text/javascript">
-	jQuery(document).ready(function($)
-	{
-		$("#table-1").dataTable({
-			"sPaginationType": "bootstrap",
-			"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-			"bStateSave": true
-		});
-		
-		$(".dataTables_wrapper select").select2({
-			minimumResultsForSearch: -1
-		});
-	});
+<script>
+	
+	function ConfirmDelete(name){
+	
+    var r = confirm("Are you sure! You want to Delete this User?");
+    if (r == true) {
+       return true;
+    } else {
+        return false;
+    }
+}
+
 </script>
 
 			<?php include('footer.php'); ?>
     	</div>
-
-     <script src="../../neon/js/gsap/main-gsap.js" id="script-resource-1"></script>
-    <script src="../../neon/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js" id="script-resource-2"></script>
-    <script src="../../neon/js/bootstrap.min.js" id="script-resource-3"></script>
-    <script src="../../neon/js/joinable.js" id="script-resource-4"></script>
-    <script src="../../neon/js/resizeable.js" id="script-resource-5"></script>
-    <script src="../../neon/js/neon-api.js" id="script-resource-6"></script>
-    <script src="../../neon/js/jquery.validate.min.js" id="script-resource-7"></script>
-    <script src="../../neon/js/neon-login.js" id="script-resource-8"></script>
-    <script src="../../neon/js/neon-custom.js" id="script-resource-9"></script>
-    <script src="../../neon/js/neon-demo.js" id="script-resource-10"></script>
-
-	<link rel="stylesheet" href="../../neon/js/select2/select2-bootstrap.css"  id="style-resource-1">
-	<link rel="stylesheet" href="../../neon/js/select2/select2.css"  id="style-resource-2">
-
-	<script src="../../neon/js/jquery.dataTables.min.js" id="script-resource-7"></script>
-	<script src="../../neon/js/dataTables.bootstrap.js" id="script-resource-8"></script>
-	<script src="../../neon/js/select2/select2.min.js" id="script-resource-9"></script>
-
-        <script type="text/javascript">
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
-var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
-var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1");
-var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
-var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
-var spryselect2 = new Spry.Widget.ValidationSelect("spryselect2");
-    </script>
     </body>
 </html>
 
