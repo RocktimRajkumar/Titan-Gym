@@ -135,7 +135,7 @@ page_protect();
 							<?php
 							date_default_timezone_set("Asia/Calcutta"); 
 							$date  = date('Y-m');
-							$query = "select COUNT(*) from enrolls_to WHERE  paid_date LIKE '$date%'";
+							$query = "select COUNT(*) from users WHERE joining_date LIKE '$date%'";
 
 							//echo $query;
 							$result = mysqli_query($con, $query);
