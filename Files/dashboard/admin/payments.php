@@ -8,7 +8,7 @@ page_protect();
 <html lang="en">
 <head>
 
-    <title>Sam's Slim Gym</title>
+    <title>Titan Gym | Payments</title>
     <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
@@ -103,8 +103,9 @@ page_protect();
 					if (mysqli_affected_rows($con) != 0) {
 					    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-					        $msgid   = $row['uid'];
-					        $query1  = "select * from users WHERE userid='$msgid'";
+					        $uid   = $row['uid'];
+					        $planid=$row['pid'];
+					        $query1  = "select * from users WHERE userid='$uid'";
 					        $result1 = mysqli_query($con, $query1);
 					        if (mysqli_affected_rows($con) == 1) {
 					            while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
@@ -119,8 +120,9 @@ page_protect();
 					                
 					                $sno++;
 					                
-					                echo "<td><form action='make_payments.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Add Payment ' class='btn btn-info'/></form></td></tr>";
-					                $msgid = 0;
+					                echo "<td><form action='make_payments.php' method='post'><input type='hidden' name='userID' value='" . $uid . "'/>
+					                <input type='hidden' name='planID' value='" . $planid . "'/><input type='submit' value='Add Payment ' class='btn btn-info'/></form></td></tr>";
+					                $uid = 0;
 					            }
 					        }
 					    }

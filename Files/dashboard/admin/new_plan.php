@@ -73,7 +73,9 @@ page_protect();
 					
 				</div>
 
-	
+		<h3>Titan Gym</h3>
+
+		<hr />
 		
 		<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
         <div class="a1-card-8 a1-light-gray" style="width:600px; margin:0 auto;">
