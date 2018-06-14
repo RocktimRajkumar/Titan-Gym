@@ -7,8 +7,7 @@ page_protect();
 <html lang="en">
 <head>
 
-    <title>Titan Gym</title>
-    <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
+  <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
@@ -22,7 +21,7 @@ page_protect();
 	</style>
 
 </head>
-    <body class="page-body  page-fade" onload="collapseSidebar()">
+     <body class="page-body  page-fade" onload="collapseSidebar()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
@@ -67,7 +66,7 @@ page_protect();
 						<ul class="list-inline links-list pull-right">
 
 							<li>Welcome <?php echo $_SESSION['full_name']; ?> 
-							</li>								
+							</li>						
 						
 							<li>
 								<a href="logout.php">
@@ -80,20 +79,20 @@ page_protect();
 					
 				</div>
 
-		<h3>Titan Gym</h3>
+		<h2>Health Status</h2>
 
 		<hr />
-		
+
 		<table class="table table-bordered datatable" id="table-1" border=1>
 			<thead>
 				<tr><h2>
 					<th>Sl.No</th>
-					<th>Membership Expiry</th>
 					<th>Member ID</th>
 					<th>Name</th>
 					<th>Contact</th>
 					<th>E-Mail</th>
 					<th>Gender</th>
+					<th>Date Of Birth</th>
 					<th>Joining Date</th>
 					<th>Action</th></h2>
 				</tr>
@@ -109,14 +108,16 @@ page_protect();
 							if (mysqli_affected_rows($con) != 0) {
 							    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							        $uid   = $row['userid'];
+							        $uname;
+							        $udob;
+							        $ujoing;
+							        $ugender;
 							        $query1  = "select * from enrolls_to WHERE uid='$uid' AND renewal='yes'";
 							        $result1 = mysqli_query($con, $query1);
 							        if (mysqli_affected_rows($con) == 1) {
 							            while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
 							                
 							                echo "<tr><td>".$sno."</td>";
-
-							                echo "<td>" . $row1['expire'] . "</td>";
 							                
 							                echo "<td>" . $row['userid'] . "</td>";
 
@@ -128,11 +129,22 @@ page_protect();
 
 							                echo "<td>" . $row['gender'] . "</td>";
 
+							                echo "<td>" . $row['dob'] . "</td>";
+
 							                echo "<td>" . $row['joining_date'] ."</td>";
 							                
+							                $uname=$row['username'];
+							       			$udob=$row['dob'];
+							        		$ujoing=$row['joining_date'];
+							        		$ugender=$row['gender'];
+
 							                $sno++;
 							       
-							                echo "<td><form action='read_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' class='a1-btn a1-blue' id='button1' value='View History ' class='btn btn-info'/></form><form action='edit_member.php' method='post'><input type='hidden'  name='name' value='" . $uid . "'/><input type='submit' class='a1-btn a1-green' id='button1' value='Edit' class='btn btn-warning'/></form><form action='del_member.php' method='post' onsubmit='return ConfirmDelete()'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Delete' width='20px' id='button1' class='a1-btn a1-orange'/></form></td></tr>";
+							                echo "<td><form action='health_status_entry.php' method='post'><input type='hidden' name='uid' value='" . $uid . "'/>
+							                <input type='hidden' name='uname' value='" . $uname . "'/>
+							                <input type='hidden' name='udob' value='" . $udob . "'/>
+							                <input type='hidden' name='ujoin' value='" . $ujoing . "'/>
+							                <input type='hidden' name='ugender' value='" . $ugender . "'/><input type='submit' class='a1-btn a1-green' id='button1' value='Health Status' class='btn btn-info'/></form></td></tr>";
 							                $msgid = 0;
 							            }
 							        }
@@ -142,26 +154,10 @@ page_protect();
 					</tbody>
 				</table>
 
-<script>
-	
-	function ConfirmDelete(name){
-	
-    var r = confirm("Are you sure! You want to Delete this User?");
-    if (r == true) {
-       return true;
-    } else {
-        return false;
-    }
-}
-
-</script>
 
 			<?php include('footer.php'); ?>
     	</div>
+
     </body>
 </html>
-
-
-
-
 
