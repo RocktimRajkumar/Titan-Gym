@@ -95,32 +95,32 @@ page_protect();
 			   <tr>
                <td height="35">DAY 1:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px; resize:none;"></textarea></td>
              </tr>
              <tr>
                <td height="35">DAY 2:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea></td></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
              <tr>
                <td height="35">DAY 3:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea></td></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
              <tr>
                <td height="35">DAY 4:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea></td></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
             <tr>
                <td height="35">DAY 5:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea><td></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea><td></td>
              </tr>
              <tr>
                <td height="35">DAY 6:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;"></textarea></td></td>
+                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
 			 
             

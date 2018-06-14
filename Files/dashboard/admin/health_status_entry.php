@@ -119,8 +119,8 @@ $ugender=$_POST['ugender'];
 				<tr><td><label for="fat">Fat : </label></td>
 				<td><input type="text" id="fat"></td></tr>
 			
-				<tr><td><label for="remarks">Remarks : </label></td>
-				<td><input type="text" id="remarks"></td></tr>
+				<tr><td valign=top><label for="remarks">Remarks : </label></td>
+				<td><textarea id="remarks" rows=5 style="resize:none"></textarea></td></tr>
 			
 				<tr><td></td><td colspan=2><input type="submit" value="SUBMIT"></td></tr>
 			</table>
