@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 14/06/2018 16:45:14
+ Date: 15/06/2018 02:05:28
 */
 
 SET NAMES utf8mb4;
@@ -39,7 +39,6 @@ INSERT INTO `address` VALUES ('1527699292', 'sdf', 'sdf', 'sdf');
 INSERT INTO `address` VALUES ('1527705448', 'Doha bora', 'Assam', 'Jorhat');
 INSERT INTO `address` VALUES ('1527791878', 'Choladhara', 'Assam', 'Jorhat');
 INSERT INTO `address` VALUES ('1527792944', 'dewal road', 'Assam', 'shivsagar');
-INSERT INTO `address` VALUES ('1527842662', 'JPR', 'Assam', 'jorhat');
 INSERT INTO `address` VALUES ('1528186134', 'Andhari', 'Maharastra', 'Mumbai');
 
 -- ----------------------------
@@ -87,7 +86,6 @@ INSERT INTO `enrolls_to` VALUES (14, 'PMZBJS', '1527791878', '2018-05-31', '1970
 INSERT INTO `enrolls_to` VALUES (21, 'PMZBJS', '1527792944', '2018-06-01', '2018-09-01', 'yes');
 INSERT INTO `enrolls_to` VALUES (22, 'PMZBJS', '1527696954', '2018-06-01', '2018-09-01', 'yes');
 INSERT INTO `enrolls_to` VALUES (23, 'TYLFGN', '1527699183', '2018-06-01', '2018-07-01', 'yes');
-INSERT INTO `enrolls_to` VALUES (25, 'PMZBJS', '1527842662', '2018-06-01', '2018-09-01', 'yes');
 INSERT INTO `enrolls_to` VALUES (26, 'TYLFGN', '1527791878', '2018-06-01', '2018-07-01', 'yes');
 INSERT INTO `enrolls_to` VALUES (27, 'PMZBJS', '1528186134', '2018-06-05', '2018-09-05', 'yes');
 
@@ -101,7 +99,7 @@ CREATE TABLE `health_status`  (
   `height` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `weight` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `fat` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `remarks` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `remarks` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `uid` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`hid`) USING BTREE,
   INDEX `userID_idx`(`uid`) USING BTREE,
@@ -117,7 +115,6 @@ INSERT INTO `health_status` VALUES (6, NULL, NULL, NULL, NULL, NULL, '1527699292
 INSERT INTO `health_status` VALUES (8, NULL, NULL, NULL, NULL, NULL, '1527705448');
 INSERT INTO `health_status` VALUES (9, NULL, NULL, NULL, NULL, NULL, '1527791878');
 INSERT INTO `health_status` VALUES (16, NULL, NULL, NULL, NULL, NULL, '1527792944');
-INSERT INTO `health_status` VALUES (18, NULL, NULL, NULL, NULL, NULL, '1527842662');
 INSERT INTO `health_status` VALUES (19, NULL, NULL, NULL, NULL, NULL, '1528186134');
 
 -- ----------------------------
@@ -138,6 +135,7 @@ CREATE TABLE `plan`  (
 -- Records of plan
 -- ----------------------------
 INSERT INTO `plan` VALUES ('BVDPWN', 'dfd', 'sdf', '2', 532);
+INSERT INTO `plan` VALUES ('GKZCJL', 'Quatarly', 'Pay your fees quartily', '4', 4000);
 INSERT INTO `plan` VALUES ('PMZBJS', 'Beginner', 'Basic', '3', 1400);
 INSERT INTO `plan` VALUES ('TYLFGN', 'monthly', 'regular', '1', 500);
 
@@ -189,7 +187,6 @@ INSERT INTO `users` VALUES ('1527699292', 'sdf', 'Male', '2343243', '2342@dfsd.c
 INSERT INTO `users` VALUES ('1527705448', 'Rounak Dutta', 'Male', '8011806046', 'rdutta7743@gmail.com', '1995-02-10', '2018-03-06');
 INSERT INTO `users` VALUES ('1527791878', 'Bishal Bhal', 'Male', '987600243', 'bishal12@gmail.com', '1994-12-01', '2018-01-06');
 INSERT INTO `users` VALUES ('1527792944', 'hello world', 'Female', '2345678912', 'hello1@gmail.com', '2010-01-22', '2018-06-01');
-INSERT INTO `users` VALUES ('1527842662', 'Govinda Poddar', 'Male', '801111876', 'gpoddar@gmail.com', '1995-12-10', '2018-06-01');
 INSERT INTO `users` VALUES ('1528186134', 'Telusko Learning ', 'Male', '7896543210', 'telusko@gmail.com', '1994-02-22', '2018-06-06');
 
 SET FOREIGN_KEY_CHECKS = 1;

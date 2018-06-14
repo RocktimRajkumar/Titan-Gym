@@ -2,11 +2,43 @@
 require '../../include/db_conn.php';
 page_protect();
 
-$uid=$_POST['uid'];
-$uname=$_POST['uname'];
-$udob=$_POST['udob'];
-$ujoin=$_POST['ujoin'];
-$ugender=$_POST['ugender'];
+$uid=0;
+$uname=0;
+$udob=0;
+$ujoin=0;
+$ugender=0;
+
+if(isset($_POST['submit'])){
+	$calorie=$_POST['calorie'];
+	$height=$_POST['height'];
+	$weight=$_POST['weight'];
+	$fat=$_POST['fat'];
+	$remarks=$_POST['remarks'];
+	$userid=$_POST['usrid'];
+
+	$query="update health_status set calorie='".$calorie."', height='".$height."',weight='".$weight."',fat='".$fat."',remarks='".$remarks."' where uid='".$userid."'";
+
+	if(mysqli_query($con,$query)){
+		echo "<head><script>alert('Health Status Added ');</script></head></html>";
+        echo "<meta http-equiv='refresh' content='0; url=new_health_status.php'>";
+
+	}
+	else{
+	 echo "<head><script>alert('NOT SUCCESSFUL, Check Again');</script></head></html>";
+	 echo "error".mysqli_error($con);
+	 echo "<meta http-equiv='refresh' content='0; url=new_health_status.php'>";
+        
+	}
+
+	
+}
+else{
+	$uid=$_POST['uid'];
+	$uname=$_POST['uname'];
+	$udob=$_POST['udob'];
+	$ujoin=$_POST['ujoin'];
+	$ugender=$_POST['ugender'];
+}
 
 ?>
 
@@ -90,10 +122,10 @@ $ugender=$_POST['ugender'];
 
 		<hr />
 
-		<form action="subhealth.php" method="POST">
+		<form action="" method="POST">
 			<table>
 				<tr><td><label for="uid">User ID : </label></td>
-					<td><input type="text" id="uid" readonly value=<?php echo $uid ?>></td></tr>
+					<td><input type="text" id="uid" readonly value=<?php echo $uid ?> name="usrid"></td></tr>
 				
 				<tr><td><label for="uname">User Name : </label></td>
 				<td><input type="text" id="uname" readonly value=<?php echo $uname ?>></td></tr>
@@ -108,21 +140,21 @@ $ugender=$_POST['ugender'];
 				<td><input type="text" id="joining" readonly value=<?php echo $ujoin ?>></td></tr>
 
 				<tr><td><label for="calorie">Calorie : </label></td>
-				<td><input type="text" id="calorie"></td></tr>
+				<td><input type="text" id="calorie" name="calorie"></td></tr>
 			
 				<tr><td><label for="height">Height : </label></td>
-				<td><input type="text" id="height"></td></tr>
+				<td><input type="text" id="height" name="height" placeholder="Enter Height in cm"></td></tr>
 			
 				<tr><td><label for="weight">Weight : </label></td>
-				<td><input type="text" id="weight"></td></tr>
+				<td><input type="text" id="weight" name="weight" placeholder="Enter Weight in kg"></td></tr>
 			
 				<tr><td><label for="fat">Fat : </label></td>
-				<td><input type="text" id="fat"></td></tr>
+				<td><input type="text" id="fat" name="fat"></td></tr>
 			
 				<tr><td valign=top><label for="remarks">Remarks : </label></td>
-				<td><textarea id="remarks" rows=5 style="resize:none"></textarea></td></tr>
+				<td><textarea id="remarks" rows=5 style="resize:none" name="remarks" placeholder="Remarks not more than 200 character"></textarea></td></tr>
 			
-				<tr><td></td><td colspan=2><input type="submit" value="SUBMIT"></td></tr>
+				<tr><td></td><td colspan=2><input type="submit" value="SUBMIT" name="submit"></td></tr>
 			</table>
 		</form>
 
