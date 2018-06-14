@@ -27,9 +27,9 @@
 			<li><a href="view_plan.php"><span>Edit Subsciption Details</span></a></li>
 		</ul>
 
-	<li><a href="new_plan.php"><i class="entypo-box"></i><span>Overview</span></a>
+	<li class="" id="overviewhassubopen"><a href="#" onclick="memberExpand(3)"><i class="entypo-box"></i><span>Overview</span></a>
 
-		<ul>
+		<ul id="overviewExpand">
 			<li class="active">
 				<a href="over_members_month.php"><span>Members per Month</span></a>
 			</li>
@@ -44,15 +44,19 @@
 
 		</ul>
 
-	<li><a href=""><i class="entypo-alert"></i><span>Exercise Routine</span></a>
+	<li class="" id="routinehassubopen"><a href="#" onclick="memberExpand(4)"><i class="entypo-alert"></i><span>Exercise Routine</span></a>
 
-		<ul>
+		<ul id="routineExpand">
 			<li class="active">
-				<a href="routine.php"><span>Add Routine</span></a>
+				<a href="addroutine.php"><span>Add Routine</span></a>
 			</li>
 
 			<li>
 				<a href=""><span>Edit Routine</span></a>
+			</li>
+
+			<li>
+				<a href=""><span>View Routine</span></a>
 			</li>
 
 		</ul>

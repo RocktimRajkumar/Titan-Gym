@@ -16,7 +16,7 @@ page_protect();
     <link href="a1style.css" type="text/css" rel="stylesheet">
 
 </head>
-      <body class="page-body  page-fade" onload="initializeMember()">
+      <body class="page-body  page-fade" onload="collapseSidebar()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	

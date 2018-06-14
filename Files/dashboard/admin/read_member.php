@@ -18,7 +18,7 @@ page_protect();
 
 
 </head>
-   <body class="page-body  page-fade" onload="initializeMember()">
+   <body class="page-body  page-fade" onload="collapseSidebar()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
@@ -182,7 +182,7 @@ page_protect();
 						        $sno++;
 						    }
 						        
-						        echo '<td><a href="gen_invoice.php?id='.$row['uid'].'"><input type="button" class="a1-btn a1-blue" value="Memo" ></a></td></tr>';
+						        echo '<td><a href="gen_invoice.php?id='.$row['uid'].'&pid='.$row['pid'].'&etid='.$row['et_id'].'"><input type="button" class="a1-btn a1-blue" value="Memo" ></a></td></tr>';
 						        $memid = 0;
 						    }
 						    

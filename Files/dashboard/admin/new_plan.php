@@ -17,7 +17,7 @@ page_protect();
   
 
 </head>
-    <body class="page-body  page-fade" onload="initializeMember()">
+    <body class="page-body  page-fade" onload="collapseSidebar()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	

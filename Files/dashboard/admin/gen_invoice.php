@@ -1,11 +1,19 @@
 <?php
 require '../../include/db_conn.php';
 page_protect();
-$id=$_GET['id'];
+$etid=$_GET['etid'];
+$pid=$_GET['pid'];
+$uid=$_GET['id'];
 
 
-					$sql = "Select * from users u INNER JOIN enrolls_to e ON u.userid=e.uid Where e.id=$id";
+
+					$sql = "Select * from users u INNER JOIN enrolls_to e ON u.userid=e.uid INNER JOIN plan p where p.pid=e.pid and userid='".$uid."' and e.et_id='".$etid."'";
 					$res=mysqli_query($con, $sql);
+					 if($res){
+						      	$row=mysqli_fetch_array($res,MYSQLI_ASSOC);
+				
+						      }
+				
 					
 
 ?>
@@ -51,15 +59,15 @@ line-height:0.5cm;
     <td width="317"><p><strong>TITAN GYM</strong></p>
       <p>Sotai Chenijan,</p>
       <p>Jorhat</p></td>
-    <td height="198"><p>Serial No:</p>
+    <td height="198"><p>Serial No : <?php echo $row['et_id'] ?></p>
       <p>&nbsp;</p>
-      <p>Date:</p></td>
+      <p>Date : <?php echo $row['paid_date']?></p></td>
     </tr>
    
   <tr>
-    <td height="118" colspan="3"><p>Received with thanks from:</p>
-      <p>a sum of Rupees:</p>
-      <p>on account of Membership plan: &nbsp;</p></td>
+    <td height="118" colspan="3"><p>Received with thanks from : <?php echo $row['username']?></p>
+      <p>A sum of Rupees : <?php echo $row['amount']?></p>
+      <p>On account of Membership plan: <?php echo $row['planName']?></p></td>
     </tr>
   
   <tr>
