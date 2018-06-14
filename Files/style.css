@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+.banner
+{
+	width:100%;
+	height:200px;
+	
+}
+.welcome
+{
+	width:100%;
+	height:500px;
+	padding:30px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#conduct_by,#issue_by{
+    display: none;
+}
+
+#offcampus,#research,#pgdaem{
+    display:none;
+}
+
+#durationfrom2,#durationfrom3,#durationto2,#durationto3,#venue2{
+    display:none;
+}

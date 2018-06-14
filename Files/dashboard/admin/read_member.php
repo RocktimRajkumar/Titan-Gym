@@ -182,7 +182,7 @@ page_protect();
 						        $sno++;
 						    }
 						        
-						        echo "<td><form action='gen_invoice.php' method='post'><input type='hidden' name='name' value='" . $memid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info'/></form></td></tr>";
+						        echo '<td><a href="gen_invoice.php?id='.$row['uid'].'"><input type="button" class="a1-btn a1-blue" value="Memo" ></a></td></tr>';
 						        $memid = 0;
 						    }
 						    

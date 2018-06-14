@@ -1,4 +1,5 @@
-<ul id="main-menu" class="">
+
+<ul id="main-menu" class="" >
 			
     <li class="active opened active"><a href="index.php"><i class="entypo-gauge"></i><span>Dashboard</span></a></li>
                 
@@ -43,15 +44,15 @@
 
 		</ul>
 
-	<li><a href="new_plan.php"><i class="entypo-alert"></i><span>Alerts</span></a>
+	<li><a href=""><i class="entypo-alert"></i><span>Exercise Routine</span></a>
 
 		<ul>
 			<li class="active">
-				<a href="unpaid.php"><span>Unpaid Members</span></a>
+				<a href="routine.php"><span>Add Routine</span></a>
 			</li>
 
 			<li>
-				<a href="sub_end.php"><span>Ending Membership</span></a>
+				<a href=""><span>Edit Routine</span></a>
 			</li>
 
 		</ul>

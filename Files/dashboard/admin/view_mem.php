@@ -12,6 +12,15 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
+	<link href="a1style.css" rel="stylesheet" type="text/css">
+	<style>
+
+
+ #button1
+{
+width:126px;
+}
+</style>
 
 </head>
     <body class="page-body  page-fade" onload="initializeMember()">
@@ -72,13 +81,13 @@ page_protect();
 					
 				</div>
 
-		<h3>Sam's Slim Gym</h3>
+		<h3>Titan Gym</h3>
 
 		<hr />
 		
-		<table class="table table-bordered datatable" id="table-1">
+		<table class="table table-bordered datatable" id="table-1" border=1>
 			<thead>
-				<tr>
+				<tr><h2>
 					<th>Sl.No</th>
 					<th>Membership Expiry</th>
 					<th>Member ID</th>
@@ -87,7 +96,7 @@ page_protect();
 					<th>E-Mail</th>
 					<th>Gender</th>
 					<th>Joining Date</th>
-					<th>Action</th>
+					<th>Action</th></h2>
 				</tr>
 			</thead>
 				<tbody>
@@ -124,7 +133,7 @@ page_protect();
 							                
 							                $sno++;
 							       
-							                echo "<td><form action='read_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='View History ' class='btn btn-info'/></form><form action='edit_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Edit' class='btn btn-warning'/></form><form action='del_member.php' method='post' onsubmit='return ConfirmDelete()'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Delete ' class='btn btn-danger'/></form></td></tr>";
+							                echo "<td><form action='read_member.php' method='post'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' class='a1-btn a1-blue' id='button1' value='View History ' class='btn btn-info'/></form><form action='edit_member.php' method='post'><input type='hidden'  name='name' value='" . $uid . "'/><input type='submit' class='a1-btn a1-green' id='button1' value='Edit' class='btn btn-warning'/></form><form action='del_member.php' method='post' onsubmit='return ConfirmDelete()'><input type='hidden' name='name' value='" . $uid . "'/><input type='submit' value='Delete' width='20px' id='button1' class='a1-btn a1-orange'/></form></td></tr>";
 							                $msgid = 0;
 							            }
 							        }

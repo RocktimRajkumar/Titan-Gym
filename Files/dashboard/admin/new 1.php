@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require '../../include/db_conn.php';
 page_protect();
 ?>
@@ -77,23 +77,26 @@ page_protect();
 
 		<hr />
 		
-		<table class="table table-bordered datatable" id="table-1" border=1>
-			<thead>
-				<tr>
-					<th>Sl.No</th>
-					<th>Membership Expiry</th>
-					<th>Name</th>
-					<th>Member ID</th>
-					<th>Phone</th>
-					<th>E-Mail</th>
-					<th>Gender</th>
-					<th>Action</th>
-				</tr>
-			</thead>
+		
+			<table border='0' WIDTH='90%' align="center"  id="table-1">
+						
+						<tr>
+<td WIDTH='6%' style="color:darkgreen"><b><u>SL.NO</u></b></td>
+<TD style="color:darkgreen" WIDTH='10%'><b><u>MEMBERSHIP EXPIRY</u></b></TD>
+<TD style="color:darkgreen" WIDTH='7%'><b><u>NAME </u></b></TD>
+                            <TD style="color:darkgreen" WIDTH='6%'><b><u>MEMBER ID</u></b></TD>
+                            <TD style="color:darkgreen" WIDTH='7%'><b><u>PHONE</u></b></TD>
+                            <TD style="color:darkgreen" WIDTH='10%'><b><u>E-MAIL</u></b></TD>
+                            
+                            <TD style="color:darkgreen" WIDTH='7%'><b><u>GENDER</u></b></TD>
+                            
+<TD style="color:darkgreen" WIDTH='%'><b><u>ACTION</u></b></TD>
+<TD style="color:darkgreen" WIDTH='15%'><b><u>MEMO</u></b></TD>
 
-				<tbody>
 
-				<?php
+								
+						</tr>
+						<?php
 
 
 					$query  = "select * from enrolls_to where renewal='yes' ORDER BY expire";
@@ -118,22 +121,24 @@ page_protect();
 					                echo "<td>" . $row1['mobile'] . "</td>";
 					                echo "<td>" . $row1['email'] . "</td>";
 					                echo "<td>" . $row1['gender'] . "</td>";
+									
+									echo "<td><form action='make_payments.php' method='post'><input type='hidden' name='userID' value='" . $uid . "'/>
+					                <input type='hidden' name='planID' value='" . $planid . "'/><input type='submit' value='Add Payment ' class='btn btn-info'/></form></td>";
 					                
 					                $sno++;
 					                
-					                echo "<td><form action='make_payments.php' method='post'><input type='hidden' name='userID' value='" . $uid . "'/>
-					                <input type='hidden' name='planID' value='" . $planid . "'/><input type='submit' class='a1-btn a1-blue' value='Add Payment ' class='btn btn-info'/></form></td></tr>";
+					                echo '<td><a href="memo.php?id='.$row['et_id'].'"><input type="button" class="a1-btn a1-green" value="Memo" ></a></td></tr>';
 									
 					                $uid = 0;
+									
 					            }
 					        }
 					    }
 					}
 
-					?>									
-				</tbody>
+					?>			
 
-		</table>
+					</TABLE>
 
 
 			<?php include('footer.php'); ?>
