@@ -124,7 +124,7 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
 			<div class="form-group">
 				<label for="field-4">Membership Type :</label>					
 					<div class="col-sm-5">
-						<select name="plan" id="field-4" required>
+						<select name="plan" id="field-4" required onchange="myplandetail(this.value)">
 							<option value="">-- Please select --</option>
 							<?php
     
@@ -146,10 +146,16 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
 			</div>
 
 			
+			<table id="plandetls">
+             
+            </table>
+
+            <tr>
+
 
 			<div class="form-group">		
 					<div class="col-sm-offset-3 col-sm-5">
-						<button type="submit" class="btn btn-primary">Save changes</button>	
+						<button type="submit" class="btn btn-primary">Pay Bill</button>	
 					</div>
 			</div>	
 
@@ -163,6 +169,31 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
     </body>
 </html>
 
+
+ <script>
+        	function myplandetail(str){
+
+        		if(str==""){
+        			document.getElementById("plandetls").innerHTML = "";
+        			return;
+        		}else{
+        			if (window.XMLHttpRequest) {
+           		 // code for IE7+, Firefox, Chrome, Opera, Safari
+           			 xmlhttp = new XMLHttpRequest();
+       				 }
+       			 	xmlhttp.onreadystatechange = function() {
+            		if (this.readyState == 4 && this.status == 200) {
+               		 document.getElementById("plandetls").innerHTML=this.responseText;
+                
+            			}
+        			};
+        			
+       				 xmlhttp.open("GET","plandetail.php?q="+str,true);
+       				 xmlhttp.send();	
+        		}
+        		
+        	}
+        </script>
 
 <?php
 } else {
