@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(isset($_SESSION["user_data"]))
+{
+	header("location:./dashboard/admin/");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
