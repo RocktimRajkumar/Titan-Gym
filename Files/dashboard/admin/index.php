@@ -113,7 +113,7 @@ page_protect();
 			</div>
 			
 
-			<div class="col-sm-3">			
+			<div class="col-sm-3"><a href="table_view.php">			
 				<div class="tile-stats tile-green">
 					<div class="icon"><i class="entypo-chart-bar"></i></div>
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
@@ -131,7 +131,7 @@ page_protect();
 							$i = 1;
 							?>
 						</div>
-				</div>
+				</div></a>
 			</div>	
 				
 			<div class="col-sm-3">			
@@ -158,7 +158,7 @@ page_protect();
 				</div>			
 			</div>
 
-			<div class="col-sm-3">			
+			<div class="col-sm-3"><a href="view_plan.php">			
 				<div class="tile-stats tile-blue">
 					<div class="icon"><i class="entypo-rss"></i></div>
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
@@ -177,7 +177,7 @@ page_protect();
 							$i = 1;
 							?>
 						</div>
-				</div>
+				</div></a>
 			</div>
 			
 
