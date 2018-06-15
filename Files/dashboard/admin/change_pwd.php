@@ -19,8 +19,12 @@ page_protect();
     	background-color: #2b303a;
     	color: #ffffff;
 		}
+         </style>
 
-    </style>
+<style>#boxx
+	{
+		width:220px;
+	}</style>
 
 </head>
     <body class="page-body  page-fade" onload="collapseSidebar()">
@@ -84,48 +88,59 @@ page_protect();
 
 		<hr />
 
-		<form action="change_s_pwd.php" enctype="multipart/form-data" method="POST" role="form" class="form-horizontal form-groups-bordered">
-
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Id :</label>					
-					<div class="col-sm-5">
-						<input type="text" name="login_id" value="<?php echo $_SESSION['user_data']; ?>" class="form-control" readonly/>
-					</div>
-			</div>
 		
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Login Key :	</label>					
-					<div class="col-sm-5">
-						<input type="text" name="login_key"  class="form-control"  data-rule-required="true" placeholder="Your secert key">
-
-					</div>
-			</div>
-
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Password :</label>					
-					<div class="col-sm-5">
-						<input type="text" name="pwfield" id="pwfield" class="form-control"  data-rule-required="true" data-rule-minlength="6" placeholder="Your new passowrd">
-
-					</div>
-			</div>
-
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Confirm password :</label>					
-					<div class="col-sm-5">
-						<input type="text" name="confirmfield" id="confirmfield" class="form-control"  data-rule-equalto="#pwfield" data-rule-required="true" data-rule-minlength="6" placeholder="Confirm Your new passowrd">
-
-					</div>
-			</div>
-
-
-			<div class="form-group">		
-					<div class="col-sm-offset-3 col-sm-5">
-						<input type="submit" class="btn btn-primary" value="Submit">
-						<button type="reset" class="btn">Cancel</button>
-					</div>
-			</div>	
-									
-		</form>
+		
+		
+		
+		
+			<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:500px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>CHANGE PASSWORD</h6>
+        </div>
+       <form id="form1" name="form1" action="change_s_pwd.php" enctype="multipart/form-data" method="POST" class="a1-container" >
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">ID:</td>
+           	   <td height="35"><input type="text" id="boxx" name="login_id" readonly value="<?php echo $_SESSION['user_data']; ?>"  required/></td>
+         	   </tr>
+			   
+			   <tr>
+               <td height="35">LOGIN KEY:</td>
+               <td height="35"><input type="text" id="boxx" name="login_key"  class="form-control"  data-rule-required="true" placeholder="Your secert key"></td>
+             </tr>
+			 <tr>
+           	   <td height="35">PASSWORD:</td>
+           	   <td height="35"><input type="text" name="pwfield" id="boxx" class="form-control"  data-rule-required="true" data-rule-minlength="6" placeholder="Your new passowrd"></td>
+         	   </tr>
+             
+             <tr>
+			  <tr>
+           	   <td height="35">CONFIRM PASSWORD:</td>
+           	   <td height="35"><input type="text" name="confirmfield" id="boxx" class="form-control"  data-rule-equalto="#pwfield" data-rule-required="true" data-rule-minlength="6" placeholder="Confirm Your new passowrd"></td>
+         	   </tr>
+             
+             <tr>
+             <tr>
+               <td height="35"></td>
+               <td height="35"><a href="change_pwd.php" class="a1-btn a1-blue">SUBMIT</a><!--<input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="SUBMIT" >-->
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+		
+		
+		
+		
+		
+		
+		
 			<?php include('footer.php'); ?>
     	</div>
 

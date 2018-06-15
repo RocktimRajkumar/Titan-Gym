@@ -13,14 +13,13 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
-    <style>
-    	.page-container .sidebar-menu #main-menu li#planhassubopen > a {
-    	background-color: #2b303a;
-    	color: #ffffff;
-		}
-
-    </style
-
+<link href="a1style.css" rel="stylesheet" type="text/css">
+<style>
+ 	#button1
+	{
+	width:126px;
+	}
+	</style>
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
 
@@ -83,7 +82,7 @@ page_protect();
 
 		<hr />
 
-		<table class="table table-bordered datatable" id="table-1">
+		<table class="table table-bordered datatable" id="table-1" border=1>
 
 			<thead>
 				<tr>
@@ -119,7 +118,7 @@ page_protect();
 					        
 					        $sno++;
 					        
-					        echo "<td><form action='edit_plan.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit Plan ' class='btn btn-info'/></form><form action='del_plan.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Delete Plan' class='btn btn-danger'/></form></td></tr>";
+					        echo "<td><form action='edit_plan.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit Plan ' id='button1' class='a1-btn a1-blue'/></form><form action='del_plan.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' id='button1' value='Delete Plan' class='a1-btn a1-orange'/></form></td></tr>";
 					        $msgid = 0;
 					    }
 					    

@@ -38,8 +38,11 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
     	background-color: #2b303a;
     	color: #ffffff;
 		}
-
-    </style>
+	#boxx
+	{
+		width:220px;
+	}
+   </style>
 </head>
    <body class="page-body  page-fade" onload="collapseSidebar()">
 
@@ -119,21 +122,21 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
            <td height="35"><table width="100%" border="0" align="center">
            	 <tr>
            	   <td height="35">MEMBERSHIP ID:</td>
-           	   <td height="35"><input type="text" name="m_id" id="field-1" value="<?php echo $uid; ?>" readonly/></td>
+           	   <td height="35"><input type="text" name="m_id" id="boxx" value="<?php echo $uid; ?>" readonly/></td>
          	   </tr>
 			   
 			   <tr>
                <td height="35">NAME:</td>
-               <td height="35"><input type="text" name="u_name" id="fiedl-2" value="<?php echo $name; ?>" placeholder="Member Name" maxlength="30" readonly/>
+               <td height="35"><input type="text" name="u_name" id="boxx" value="<?php echo $name; ?>" placeholder="Member Name" maxlength="30" readonly/>
                  
              </tr>
              <tr>
                <td height="35">PREVIOUS PLAN</td>
-               <td height="35"><input type="text" name="prevPlan" id="field-3" value="<?php echo $planName; ?>" readonly></td></td>
+               <td height="35"><input type="text" name="prevPlan" id="boxx" value="<?php echo $planName; ?>" readonly></td></td>
              </tr>
              <tr>
                <td height="35">MEMBERSHIP TYPE:</td>
-               <td height="35"><select name="plan" id="field-4" required onchange="myplandetail(this.value)">
+               <td height="35"><select name="plan" id="boxx" required onchange="myplandetail(this.value)">
 							<option value="">-- Please select --</option>
 							<?php
     

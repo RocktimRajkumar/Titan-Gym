@@ -19,8 +19,10 @@ page_protect();
     	background-color: #2b303a;
     	color: #ffffff;
 		}
-
-    </style>
+       #boxx
+	{
+		width:220px;
+	}</style>
 
 </head>
       <body class="page-body  page-fade" onload="collapseSidebar()">
@@ -96,32 +98,32 @@ page_protect();
            <td height="35"><table width="100%" border="0" align="center">
            	 <tr>
            	   <td height="35">MEMBERSHIP ID:</td>
-           	   <td height="35"><input type="text" name="m_id" value="<?php echo time(); ?>" readonly required/></td>
+           	   <td height="35"><input type="text" id="boxx" name="m_id" value="<?php echo time(); ?>" readonly required/></td>
          	   </tr>
 			   
 			   <tr>
                <td height="35">NAME:</td>
-               <td height="35"><input name="u_name" id="username" size="30" required/></td>
+               <td height="35"><input name="u_name" id="boxx"  required/></td>
              </tr>
              <tr>
                <td height="35">STREET NAME:</td>
-               <td height="35"><input  name="street_name" id="streetname"  size="30" required/></td>
+               <td height="35"><input  name="street_name" id="boxx"   required/></td>
              </tr>
              <tr>
                <td height="35">CITY:</td>
-               <td height="35"><input <input type="text" name="city" id="city" required/ size="30"></td>
+               <td height="35"><input <input type="text" name="city" id="boxx" required/ ></td>
              </tr>
              <tr>
                <td height="35">ZIPCODE:</td>
-               <td height="35"><input type="number" name="zipcode" id="zipcode" maxlength="6" required / size="30"></td>
+               <td height="35"><input type="number" name="zipcode" id="boxx" maxlength="6" required / ></td>
              </tr>
             <tr>
                <td height="35">STATE:</td>
-               <td height="35"><input type="text" name="state" id="state" required/ size="30"></td>
+               <td height="35"><input type="text" name="state" id="boxx" required/ size="30"></td>
              </tr>
             <tr>
                <td height="35">GENDER:</td>
-               <td height="35"><select name="gender" id="gender" required>
+               <td height="35"><select name="gender" id="boxx" required>
 
 					<option value="">--Please Select--</option>
 					<option value="Male">Male</option>
@@ -130,23 +132,23 @@ page_protect();
              </tr>
             <tr>
                <td height="35">DATE OF BIRTH:</td>
-               <td height="35"><input type="date" name="dob" id="dob" required/ size="30"></td>
+               <td height="35"><input type="date" name="dob" id="boxx" required/ size="30"></td>
              </tr>
 			 <tr>
                <td height="35">PHONE NO:</td>
-               <td height="35"><input type="number" name="mobile" id="mobile" maxlength="10" required/ size="30"></td>
+               <td height="35"><input type="number" name="mobile" id="boxx" maxlength="10" required/ size="30"></td>
              </tr>
 			  <tr>
                <td height="35">EMAIL ID:</td>
-               <td height="35"><input type="email" name="email" id="email" required/ size="30"></td>
+               <td height="35"><input type="email" name="email" id="boxx" required/ size="30"></td>
              </tr>
 			 <tr>
                <td height="35">JOINING DATE:</td>
-               <td height="35"><input type="date" name="jdate" id="jdate" required size="30"></td>
+               <td height="35"><input type="date" name="jdate" id="boxx" required size="30"></td>
              </tr>
              <tr>
                <td height="35">PLAN:</td>
-               <td height="35"><select name="plan" id="plan" required onchange="myplandetail(this.value)">
+               <td height="35"><select name="plan" id="boxx" required onchange="myplandetail(this.value)">
 					<option value="">--Please Select--</option>
 					<?php
 						$query="select * from plan";
