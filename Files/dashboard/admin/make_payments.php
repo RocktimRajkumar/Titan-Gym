@@ -97,34 +97,37 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
 
 		<hr />
 
-		<form action="submit_payments.php" method="POST">
-
-			<div class="form-group">
-				<label for="field-1">Membership ID :</label>					
-					<div>
-						<input type="text" name="m_id" id="field-1" value="<?php echo $uid; ?>" readonly/>
-					</div>
-			</div>
-
-			<div class="form-group">
-				<label for="field-2">Name :</label>					
-					<div>
-						<input type="text" name="u_name" id="fiedl-2" value="<?php echo $name; ?>" placeholder="Member Name" maxlength="30" readonly/>
-					</div>
-			</div>
-
-
-			<div class="form-group">
-				<label for="field-3">Previous Plan :</label>					
-					<div>
-						<input type="text" name="prevPlan" id="field-3" value="<?php echo $planName; ?>" readonly>
-					</div>
-			</div>
-
-			<div class="form-group">
-				<label for="field-4">Membership Type :</label>					
-					<div class="col-sm-5">
-						<select name="plan" id="field-4" required onchange="myplandetail(this.value)">
+		
+		
+		
+		
+		
+		<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:500px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>MAKE PAYMENT</h6>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="submit_payments.php">
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">MEMBERSHIP ID:</td>
+           	   <td height="35"><input type="text" name="m_id" id="field-1" value="<?php echo $uid; ?>" readonly/></td>
+         	   </tr>
+			   
+			   <tr>
+               <td height="35">NAME:</td>
+               <td height="35"><input type="text" name="u_name" id="fiedl-2" value="<?php echo $name; ?>" placeholder="Member Name" maxlength="30" readonly/>
+                 
+             </tr>
+             <tr>
+               <td height="35">PREVIOUS PLAN</td>
+               <td height="35"><input type="text" name="prevPlan" id="field-3" value="<?php echo $planName; ?>" readonly></td></td>
+             </tr>
+             <tr>
+               <td height="35">MEMBERSHIP TYPE:</td>
+               <td height="35"><select name="plan" id="field-4" required onchange="myplandetail(this.value)">
 							<option value="">-- Please select --</option>
 							<?php
     
@@ -141,25 +144,29 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
 							    }
 							    
 							?>
-						</select>
-					</div>
-			</div>
-
-			
-			<table id="plandetls">
+						</select></td></td>
+             </tr>
              
-            </table>
-
-            <tr>
-
-
-			<div class="form-group">		
-					<div class="col-sm-offset-3 col-sm-5">
-						<button type="submit" class="btn btn-primary">Pay Bill</button>	
-					</div>
-			</div>	
-
-		</form>
+		<table id="plandetls">
+                 </table>
+			 
+            
+             <tr>
+             <tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="ADD PAYMENT" >
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+		
+		
+		
+		
 
 		<?php include('footer.php'); ?>
 

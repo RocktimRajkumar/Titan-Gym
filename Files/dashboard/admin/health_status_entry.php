@@ -58,6 +58,10 @@ else{
 	{
 	width:126px;
 	}
+	#boxx
+	{
+		width:220px;
+	}
 	</style>
 
 </head>
@@ -119,46 +123,94 @@ else{
 					
 				</div>
 
-		<h2>Health Status</h2>
+		
 
 		<hr />
 
-		<form action="" method="POST">
-			<table>
-				<tr><td><label for="uid">User ID : </label></td>
-					<td><input type="text" id="uid" readonly value=<?php echo $uid ?> name="usrid"></td></tr>
-				
-				<tr><td><label for="uname">User Name : </label></td>
-				<td><input type="text" id="uname" readonly value=<?php echo $uname ?>></td></tr>
-				
-				<tr><td><label for="dob">DOB : </label></td>
-				<td><input type="text" id="dob" readonly value=<?php echo $udob ?>></td></tr>
-				
-				<tr><td><label for="gender">Gender : </label></td>				
-				<td><input type="text" id="gender" readonly value=<?php echo $ugender ?>></td></tr>
-				
-				<tr><td><label for="joining">Joining Date: </label></td>				
-				<td><input type="text" id="joining" readonly value=<?php echo $ujoin ?>></td></tr>
+		
 
-				<tr><td><label for="calorie">Calorie : </label></td>
-				<td><input type="text" id="calorie" name="calorie"></td></tr>
+		
+		<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:500px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>EDIT HEALTH STATUS</h6>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="">
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">MEMBERSHIP ID:</td>
+           	   <td height="35"><input type="text" id="boxx" readonly value=<?php echo $uid ?> name="usrid"></td>
+         	   </tr>
+			   
+			   <tr>
+               <td height="35">USER NAME:</td>
+               <td height="35"><input type="text" id="boxx" readonly value=<?php echo $uname ?>></td>
+             </tr>
+             <tr>
+               <td height="35">DATE OF BIRTH:</td>
+               <td height="35"><input type="text" id="boxx" readonly value=<?php echo $udob ?>></td>
+             </tr>
+             <tr>
+               <td height="35">GENDER:</td>
+               <td height="35"><input type="text" id="boxx" readonly value=<?php echo $ugender ?>></td>
+             </tr>
+             <tr>
+               <td height="35">JOINING DATE:</td>
+               <td height="35"><input type="text" id="boxx" readonly value=<?php echo $ujoin ?>></td>
+             </tr>
+            <tr>
+               <td height="35">CALORIE:</td>
+               <td height="35"><input type="text" id="boxx" name="calorie"></td>
+             </tr>
+            <tr>
+               <td height="35">HEIGHT:</td>
+               <td height="35"><input type="text" id="boxx" name="height" placeholder="Enter Height in cm"></td>
+             </tr>
+            
 			
-				<tr><td><label for="height">Height : </label></td>
-				<td><input type="text" id="height" name="height" placeholder="Enter Height in cm"></td></tr>
-			
-				<tr><td><label for="weight">Weight : </label></td>
-				<td><input type="text" id="weight" name="weight" placeholder="Enter Weight in kg"></td></tr>
-			
-				<tr><td><label for="fat">Fat : </label></td>
-				<td><input type="text" id="fat" name="fat"></td></tr>
-			
-				<tr><td valign=top><label for="remarks">Remarks : </label></td>
-				<td><textarea id="remarks" rows=5 style="resize:none" name="remarks" placeholder="Remarks not more than 200 character"></textarea></td></tr>
-			
-				<tr><td></td><td colspan=2><input type="submit" value="SUBMIT" name="submit"></td></tr>
-			</table>
-		</form>
-
+			 
+             <tr>
+               <td height="35">WEIGHT:</td>
+               <td height="35"><input type="text" id="boxx" name="weight" placeholder="Enter Weight in kg"></td>
+             </tr>
+            <tr>
+               <td height="35">FAT:</td>
+               <td height="35"><input type="text" id="boxx" name="fat"></td>
+             </tr>
+			 <tr>
+               <td height="35">REMARKS:</td>
+               <td height="35"><textarea id="remarks" rows="5" name="remarks" placeholder="Remarks not more than 200 character" style="margin: 0px; width: 220px; height: 72px; resize:none;"></textarea></td>
+             </tr>
+             <tr>
+             <tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="SUBMIT" >
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<?php include('footer.php'); ?>
     	</div>
 

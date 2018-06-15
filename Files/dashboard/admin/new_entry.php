@@ -155,7 +155,7 @@ page_protect();
 				</select></td>
              </tr>
 			
-			<tbody id="plandetls">
+	    <tbody id="plandetls">
              
             </tbody>
 

@@ -83,7 +83,7 @@ page_protect();
 		<div class="a1-container a1-dark-gray a1-center">
         	<h6>NEW ROUTINE</h6>
         </div>
-       <form id="form1" name="form1" method="post" class="a1-container" action="new_submit.php">
+       <form id="form1" name="form1" method="post" class="a1-container" action="saveroutine.php">
          <table width="100%" border="0" align="center">
          <tr>
            <td height="35"><table width="100%" border="0" align="center">
@@ -95,32 +95,32 @@ page_protect();
 			   <tr>
                <td height="35">DAY 1:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px; resize:none;"></textarea></td>
+                 <textarea name="day1" id="textarea" style="margin: 0px; width: 236px; height: 42px; resize:none;"></textarea></td>
              </tr>
              <tr>
                <td height="35">DAY 2:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
+                 <textarea name="day2" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
              <tr>
                <td height="35">DAY 3:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
+                 <textarea name="day3" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
              <tr>
                <td height="35">DAY 4:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
+                 <textarea name="day4" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
             <tr>
                <td height="35">DAY 5:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea><td></td>
+                 <textarea name="day5" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea><td></td>
              </tr>
              <tr>
                <td height="35">DAY 6:</td>
                <td height="35"><label for="textarea"></label>
-                 <textarea name="textarea" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
+                 <textarea name="day6" id="textarea" style="margin: 0px; width: 236px; height: 42px;resize:none;"></textarea></td></td>
              </tr>
 			 
             
@@ -148,7 +148,6 @@ page_protect();
 
     </body>
 </html>
-
 
 
 				

@@ -144,6 +144,7 @@ page_protect();
 							                echo "<td><form action='health_status_entry.php' method='post'><input type='hidden' name='uid' value='" . $uid . "'/>
 							                <input type='hidden' name='uname' value='" . $uname . "'/>
 							                <input type='hidden' name='udob' value='" . $udob . "'/>
+											
 							                <input type='hidden' name='ujoin' value='" . $ujoing . "'/>
 							                <input type='hidden' name='ugender' value='" . $ugender . "'/><input type='submit' class='a1-btn a1-green' id='button1' value='Health Status' class='btn btn-info'/></form></td></tr>";
 							                $msgid = 0;
