@@ -7,6 +7,11 @@ $uname=0;
 $udob=0;
 $ujoin=0;
 $ugender=0;
+$cal="";
+$hei="";
+$wei="";
+$fa="";
+$remar="";
 
 if(isset($_POST['submit'])){
 	$calorie=$_POST['calorie'];
@@ -38,6 +43,17 @@ else{
 	$udob=$_POST['udob'];
 	$ujoin=$_POST['ujoin'];
 	$ugender=$_POST['ugender'];
+	
+	$sql="select * from health_status where uid='".$uid."'";
+	$result=mysqli_query($con,$sql);
+	if($result){
+		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+       	$cal=$row['calorie'];
+		$hei=$row['height'];
+		$wei=$row['weight'];
+		$fa=$row['fat'];
+		$remar=$row['remarks'];
+	}
 }
 
 ?>
@@ -162,26 +178,26 @@ else{
              </tr>
             <tr>
                <td height="35">CALORIE:</td>
-               <td height="35"><input type="text" id="boxx" name="calorie"></td>
+               <td height="35"><input type="text" id="boxx" name="calorie" value='<?php echo $cal?>'></td>
              </tr>
             <tr>
                <td height="35">HEIGHT:</td>
-               <td height="35"><input type="text" id="boxx" name="height" placeholder="Enter Height in cm"></td>
+               <td height="35"><input type="text" id="boxx" name="height" value='<?php echo $hei?>'placeholder="Enter Height in cm"></td>
              </tr>
             
 			
 			 
              <tr>
                <td height="35">WEIGHT:</td>
-               <td height="35"><input type="text" id="boxx" name="weight" placeholder="Enter Weight in kg"></td>
+               <td height="35"><input type="text" id="boxx" name="weight" value='<?php echo $wei?>'placeholder="Enter Weight in kg"></td>
              </tr>
             <tr>
                <td height="35">FAT:</td>
-               <td height="35"><input type="text" id="boxx" name="fat"></td>
+               <td height="35"><input type="text" id="boxx" name="fat" value='<?php echo $fa?>'></td>
              </tr>
 			 <tr>
                <td height="35">REMARKS:</td>
-               <td height="35"><textarea id="remarks" rows="5" name="remarks" placeholder="Remarks not more than 200 character" style="margin: 0px; width: 220px; height: 72px; resize:none;"></textarea></td>
+               <td height="35"><textarea id="remarks" rows="5" name="remarks" placeholder="Remarks not more than 200 character" style="margin: 0px; width: 220px; height: 72px; resize:none;"><?php echo $remar?></textarea></td>
              </tr>
              <tr>
              <tr>
