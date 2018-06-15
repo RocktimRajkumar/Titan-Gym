@@ -139,7 +139,7 @@ page_protect();
              </tr>
              <tr>
                <td height="35">PLAN:</td>
-               <td height="35"><select name="plan" id="plan" required>
+               <td height="35"><select name="plan" id="plan" required onchange="myplandetail(this.value)">
 					<option value="">--Please Select--</option>
 					<?php
 						$query="select * from plan";
@@ -154,7 +154,11 @@ page_protect();
 					
 				</select></td>
              </tr>
-            
+			
+			<tbody id="plandetls">
+             
+            </tbody>
+
              <tr>
              <tr>
                <td height="35">&nbsp;</td>
@@ -168,7 +172,30 @@ page_protect();
     </div>
     </div>   
         
-        
+        <script>
+        	function myplandetail(str){
+
+        		if(str==""){
+        			document.getElementById("plandetls").innerHTML = "";
+        			return;
+        		}else{
+        			if (window.XMLHttpRequest) {
+           		 // code for IE7+, Firefox, Chrome, Opera, Safari
+           			 xmlhttp = new XMLHttpRequest();
+       				 }
+       			 	xmlhttp.onreadystatechange = function() {
+            		if (this.readyState == 4 && this.status == 200) {
+               		 document.getElementById("plandetls").innerHTML=this.responseText;
+                
+            			}
+        			};
+        			
+       				 xmlhttp.open("GET","plandetail.php?q="+str,true);
+       				 xmlhttp.send();	
+        		}
+        		
+        	}
+        </script>
         
         
 			<?php include('footer.php'); ?>

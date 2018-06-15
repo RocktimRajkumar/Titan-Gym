@@ -15,7 +15,7 @@ page_protect();
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 <link href="a1style.css" rel="stylesheet" type="text/css">
 </head>
-     <body class="page-body  page-fade">
+     <body class="page-body  page-fade" onload="collapseSidebar()">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
