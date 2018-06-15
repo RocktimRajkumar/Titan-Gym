@@ -80,6 +80,14 @@ else{
 	}
 	</style>
 
+	<style>
+    	.page-container .sidebar-menu #main-menu li#health_status > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
+		}
+
+    </style>
+
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
 

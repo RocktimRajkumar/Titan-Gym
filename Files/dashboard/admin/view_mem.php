@@ -19,6 +19,12 @@ page_protect();
 	{
 	width:126px;
 	}
+
+	.page-container .sidebar-menu #main-menu li#hassubopen > a {
+	background-color: #2b303a;
+	color: #ffffff;
+	}
+
 	</style>
 
 </head>

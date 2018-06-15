@@ -14,6 +14,13 @@ page_protect();
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 	<link href="a1style.css" rel="stylesheet" type="text/css">
+	<style>
+    	.page-container .sidebar-menu #main-menu li#adminprofile > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
+		}
+
+    </style>
 
 </head>
     <body class="page-body  page-fade" onload="collapseSidebar()">

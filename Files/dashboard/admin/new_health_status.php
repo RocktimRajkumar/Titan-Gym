@@ -13,6 +13,13 @@ page_protect();
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 	<link href="a1style.css" rel="stylesheet" type="text/css">
+	 <style>
+    	.page-container .sidebar-menu #main-menu li#health_status > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
+		}
+
+    </style>
 	
 	<style>
  	#button1

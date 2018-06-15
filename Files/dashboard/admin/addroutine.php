@@ -13,7 +13,14 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
-<link href="a1style.css" rel="stylesheet" type="text/css">
+    <link href="a1style.css" rel="stylesheet" type="text/css">
+    <style>
+      .page-container .sidebar-menu #main-menu li#routinehassubopen > a {
+      background-color: #2b303a;
+      color: #ffffff;
+    }
+
+    </style
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
 

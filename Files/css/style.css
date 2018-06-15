@@ -505,10 +505,6 @@ li {
     display: list-item;
 }
 
-.page-container .sidebar-menu #main-menu li.active > a {
-    background-color: #2b303a;
-    color: #ffffff;
-}
 
 .page-container .sidebar-menu #main-menu li a {
     position: relative;
@@ -604,11 +600,6 @@ ul, ol {
 
 .page-container .sidebar-menu #main-menu li ul > li {
     border-bottom: 1px solid rgba(69, 74, 84, 0.4);
-}
-
-.page-container .sidebar-menu #main-menu li.active > a {
-    background-color: #2b303a;
-    color: #ffffff;
 }
 
 .page-container .sidebar-menu #main-menu li ul > li:last-child {

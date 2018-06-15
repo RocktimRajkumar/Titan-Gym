@@ -33,7 +33,13 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
     <link href="a1style.css" type="text/css" rel="stylesheet">
+    <style>
+    	.page-container .sidebar-menu #main-menu li#paymnt > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
+		}
 
+    </style>
 </head>
    <body class="page-body  page-fade" onload="collapseSidebar()">
 

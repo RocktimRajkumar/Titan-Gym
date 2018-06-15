@@ -15,6 +15,13 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
+     <style>
+    	.page-container .sidebar-menu #main-menu li#hassubopen > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
+		}
+
+    </style>
 
 
 </head>
