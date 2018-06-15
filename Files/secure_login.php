@@ -33,6 +33,7 @@ if ($count == 1) {
     $_SESSION['logged']     = "start";
     // $_SESSION['auth_level'] = $row['level'];
     $_SESSION['full_name']  = $user_id_auth;
+    $_SESSION['username']=$row['Full_name'];
     // $auth_l_x               = $_SESSION['auth_level'];
     // if ($auth_l_x == 5) {
         header("location: ./dashboard/admin/");
