@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require '../../include/db_conn.php';
 page_protect();
 
@@ -90,14 +90,16 @@ if (isset($_POST['name'])) {
 
 		<hr />
 
-			<form action="edit_mem_submit.php" method="POST" >
+			<form action="edit_member.php" method="POST" >
 
 				<?php
 	    
 				    $query  = "SELECT * FROM users u 
 				    		   INNER JOIN address a ON u.userid=a.id
 				    		   INNER JOIN  health_status h ON u.userid=h.uid
-				    		   WHERE userid='$memid'";
+				    		   INNER JOIN enrolls_to e on u.userid=e.uid
+				    		   INNER JOIN plan p on e.pid=p.pid
+				    		   WHERE userid='$memid' and e.renewal='yes'";
 				    //echo $query;
 				    $result = mysqli_query($con, $query);
 				    $sno    = 1;
@@ -121,7 +123,14 @@ if (isset($_POST['name'])) {
 				            $height=$row['height'];
 				            $weight=$row['weight'];
 				            $fat=$row['fat'];
-				            $remarks=$row['remarks'];				            
+				            $planname=$row['planName'];
+				            $pamount=$row['amount'];
+				            $pvalidity=$row['validity'];
+				            $pdescription=$row['description'];
+				            $paiddate=$row['paid_date'];
+				            $expire=$row['expire'];
+				            $remarks=$row['remarks'];
+
 				        }
 				    }
 				    else{
@@ -135,39 +144,35 @@ if (isset($_POST['name'])) {
 				<table>
 					<tr>
 						<td><label>User ID:</label></td>
-						<td><input type="text" name="uid" readonly required value=<?php echo $memid?>></td>
+						<td><input type="text" name="name" readonly required value=<?php echo $memid?>></td>
 					</tr>
 					<tr>
 						<td><label>Name:</label></td>
-						<td><input type="text" name="uname" value='<?php echo $name?>'></td>
+						<td><input type="text" readonly value='<?php echo $name?>'></td>
 					</tr>
 					<tr>
 						<td><label>Gender:</label></td>
-						<td height="35"><select name="gender" id="gender" required>
-
-						<option <?php if($gender == 'Male'){echo("selected");}?> value="Male">Male</option>
-						<option <?php if($gender == 'Female'){echo("selected");}?> value="Female">Female</option>
-						</select></td>
+						<td height="35"><input type="text" readonly value=<?php echo $gender?>></td>
 					</tr>
 					<tr>
 						<td><label>Mobile:</label></td>
-						<td><input type="number" name="phone" maxlength="10" value=<?php echo $mobile?>></td>
+						<td><input type="text" readonly maxlength="10" value=<?php echo $mobile?>></td>
 					</tr>
 					<tr>
 						<td><label>Email:</label></td>
-						<td><input type="email" name="email" required value=<?php echo $email?>></td>
+						<td><input type="email" readonly required value=<?php echo $email?>></td>
 					</tr>
 					<tr>
 						<td><label>DOB:</label></td>
-						<td><input type="date" name="dob" value=<?php echo $dob?>></td>
+						<td><input type="text" readonly value=<?php echo $dob?>></td>
 					</tr>
 					<tr>
 						<td><label>Joining Date:</label></td>
-						<td><input type="date" name="jdate" value=<?php echo $jdate?>></td>
+						<td><input type="text" readonly value=<?php echo $jdate?>></td>
 					</tr>
 					<tr>
 						<td><label>Street Name:</label></td>
-						<td><input type="text" name="stname" value='<?php echo $streetname?>'></td>
+						<td><input type="text" readonly value='<?php echo $streetname?>'></td>
 					</tr>
 					<tr>
 						<td><label>State:</label></td>
@@ -175,32 +180,56 @@ if (isset($_POST['name'])) {
 					</tr>
 					<tr>
 						<td><label>City:</label></td>
-						<td><input type="text" name="city" value='<?php echo $city?>'></td>
+						<td><input type="text" readonly value='<?php echo $city?>'></td>
 					</tr>
 					<tr>
 						<td><label>Calorie:</label></td>
-						<td><input type="text" name="calorie" value=<?php echo $calorie?>></td>
+						<td><input type="text" readonly value=<?php echo $calorie?>></td>
 					</tr>
 					<tr>
 						<td><label>Height:</label></td>
-						<td><input type="text" name="height" value=<?php echo $height?>></td>
+						<td><input type="text" readonly value=<?php echo $height?>></td>
 					</tr>
 					<tr>
 						<td><label>Weight:</label></td>
-						<td><input type="text" name="weight" value=<?php echo $weight?>></td>
+						<td><input type="text" readonly value=<?php echo $weight?>></td>
 					</tr>
 					<tr>
 						<td><label>Fat:</label></td>
-						<td><input type="text" name="fat" value=<?php echo $fat?>></td>
+						<td><input type="text" readonly value=<?php echo $fat?>></td>
+					</tr>
+					<tr>
+						<td><label>Plan Name:</label></td>
+						<td><input type="text" readonly value='<?php echo $planname?>'></td>
+					</tr>
+					<tr>
+						<td><label>Plan Amount:</label></td>
+						<td><input type="text" readonly value=<?php echo $pamount?>></td>
+					</tr>
+					<tr>
+						<td><label>Plan Validity:</label></td>
+						<td><input type="text" readonly value='<?php echo $pvalidity.' Month'?>'></td>
+					</tr>
+					<tr>
+						<td><label>Plan Description:</label></td>
+						<td><input type="text" readonly value='<?php echo $pdescription?>'></td>
+					</tr>
+					<tr>
+						<td><label>Paid Date:</label></td>
+						<td><input type="text" readonly value=<?php echo $paiddate?>></td>
+					</tr>
+					<tr>
+						<td><label>Expired Date:</label></td>
+						<td><input type="text" readonly value=<?php echo $expire?>></td>
 					</tr>
 					<tr>
 						<td><label>Remarks:</label></td>
-						<td><textarea name="remarks" row='35'><?php echo $remarks?></textarea></td>
+						<td><textarea readonly row='35'><?php echo $remarks?></textarea></td>
 					</tr>
 				</table>
 
-				<input type="submit" value="Update">
-				<input type="reset" value="Cancel">
+				<input type="submit" value="Edit">
+				<button><a href="table_view"> Back </a></button>
 				
 			</form>
 					

@@ -13,12 +13,16 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
-<link href="a1style.css" rel="stylesheet" type="text/css">
-<style>
- 	#button1
-	{
-	width:126px;
-	}
+	<link href="a1style.css" rel="stylesheet" type="text/css">
+	<style>
+ 		#button1
+		{
+		width:126px;
+		}
+		.page-container .sidebar-menu #main-menu li#planhassubopen > a {
+    		background-color: #2b303a;
+    		color: #ffffff;
+		}
 	</style>
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
@@ -92,7 +96,7 @@ page_protect();
 					<th>Details</th>
 					<th>Months</th>
 					<th>Rate</th>
-					<th></th>
+					<th>Action</th>
 				</tr>
 			</thead>		
 				<tbody>
