@@ -21,7 +21,7 @@ page_protect();
     </style>
 
 </head>
-    <body class="page-body  page-fade" onload="collapseSidebar()">
+    <body class="page-body  page-fade" onload="collapseSidebar();showMember();">
 
     	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
