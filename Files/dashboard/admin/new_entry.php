@@ -83,7 +83,7 @@ page_protect();
 				</div>
 
 		
-        	<h3>Titan Gym</h3>
+        	<h3>New Registration</h3>
 
 		<hr />
         

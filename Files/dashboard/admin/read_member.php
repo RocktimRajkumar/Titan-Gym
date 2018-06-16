@@ -1,4 +1,4 @@
-		
+
 
 <?php
 require '../../include/db_conn.php';
@@ -84,7 +84,7 @@ page_protect();
 					
 				</div>
 
-		<h3>Titan Gym</h3>
+		<h3>Member History</h3>
 
 			Details of : - <?php
 			$id     = $_POST['name'];

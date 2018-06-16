@@ -82,7 +82,7 @@ page_protect();
 					
 				</div>
 
-		<h3>Membership Plan</h3>
+		<h3>Manage Plan</h3>
 
 		<hr />
 
@@ -91,7 +91,7 @@ page_protect();
 			<thead>
 				<tr>
 					<th>S.No</th>
-					<th>Membership ID</th>
+					<th>Plan ID</th>
 					<th>Plan name</th>
 					<th>Details</th>
 					<th>Months</th>
@@ -118,7 +118,7 @@ page_protect();
 					        echo "<td>" . $row['planName'] . "</td>";
 					        echo "<td>" . $row['description'] . "</td>";
 					        echo "<td>" . $row['validity'] . "</td>";
-					        echo "<td>" . $row['amount'] . "</td>";
+					        echo "<td>₹" . $row['amount'] . "</td>";
 					        
 					        $sno++;
 					        

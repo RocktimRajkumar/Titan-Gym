@@ -20,7 +20,7 @@ page_protect();
       color: #ffffff;
     }
 
-    </style
+    </style>
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
 
@@ -79,7 +79,7 @@ page_protect();
 					
 				</div>
 
-		<h3></h3>
+		<h3>Create Routine</h3>
 
 		<hr />
 

@@ -86,7 +86,7 @@ page_protect();
 					
 				</div>
 
-		<h3>Titan Gym</h3>
+		<h3>Edit Member</h3>
 
 		<hr />
 		
