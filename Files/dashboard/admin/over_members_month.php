@@ -78,7 +78,7 @@ page_protect();
 					
 				</div>
 
-		<h2>Overview</h2>
+		<h2>Member Per Month</h2>
 
 		<hr />
 

@@ -7,7 +7,7 @@ page_protect();
 <html lang="en">
 <head>
 
-    <title>Titan Gym | Member per month</title>
+    <title>Titan Gym | Member per Year</title>
      <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
@@ -78,7 +78,7 @@ page_protect();
 					
 				</div>
 
-		<h2>Overview</h2>
+		<h2>Member Per Year</h2>
 
 		<hr />
 

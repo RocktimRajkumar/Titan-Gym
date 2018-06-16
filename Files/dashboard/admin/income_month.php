@@ -1,22 +1,22 @@
-﻿<?php
+<?php
 require '../../include/db_conn.php';
 $month=$_GET['mm'];
 $year=$_GET['yy'];
-$flag=$_GET['flag'];
 
-$query="";
-
-if($flag==0)
-	$query="select * from users u INNER JOIN address a on u.userid=a.id where u.joining_date like '".$year."-".$month."___'";
-else if($flag==1)
-	$query="select * from users u INNER JOIN address a on u.userid=a.id where u.joining_date like '".$year."______'";
+$query="select DISTINCT u.userid,u.username,u.gender,u.mobile,
+u.email,u.joining_date,a.state,a.city,
+e.paid_date,e.expire,p.planName,p.amount,p.validity from users u 
+INNER JOIN address a on u.userid=a.id 
+INNER JOIN enrolls_to e on u.userid=e.uid
+INNER JOIN plan p on p.pid=e.pid
+where e.paid_date  like '".$year."-".$month."___'";
   
 
 $res=mysqli_query($con,$query);
 echo "<tbody>";
 
 $sno    = 1;
-
+$totalamount=0;
 if (mysqli_affected_rows($con) != 0) {
 
 	echo "<thead>
@@ -28,9 +28,11 @@ if (mysqli_affected_rows($con) != 0) {
 					<th>E-Mail</th>
 					<th>Gender</th>
 					<th>State</th>
-					<th>City</th>
-					<th>DOB</th>
-					<th>Joining_Date</th>
+					<th>Paid_Date</th>
+					<th>Expire_Date</th>
+					<th>Plan_Name</th>
+					<th>Amount</th>
+					<th>Validity</th>
 					</h2>
 				</tr>
 	</thead>";
@@ -52,25 +54,30 @@ if (mysqli_affected_rows($con) != 0) {
 
                 echo "<td>" . $row['state'] . "</td>";
 
-                echo "<td>" . $row['city'] . "</td>";
+                echo "<td>" . $row['paid_date'] . "</td>";
 
-                echo "<td>" . $row['dob'] . "</td>";
+                echo "<td>" . $row['expire'] . "</td>";
 
-                echo "<td>" . $row['joining_date'] ."</td></tr>";
+                echo "<td>" . $row['planName'] . "</td>";
+
+                echo "<td>" . $row['amount'] . "</td>";
+
+                echo "<td>" . $row['validity'] . " Month</td>";
                 
+                $totalamount=$totalamount+$row['amount'];
                 $sno++;
             
         
     }
 
+ 	$monthName = date("F", mktime(0, 0, 0, $month, 10));
+
+    echo "<tr><td></td><td></td><td></td><td colspan=3><h3>Total Income on ".$monthName." is ₹".$totalamount."</h3></td></tr>";
+
 }
 else{
-	if($flag==0){
 		$monthName = date("F", mktime(0, 0, 0, $month, 10));
 		echo "<h2>No Data found On ".$monthName." ".$year."</h2";
-	}
-	else if($flag==1)
-		echo "<h2>No Data found On ".$year."</h2";
 }
 echo "</tbody>";
 

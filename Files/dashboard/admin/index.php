@@ -83,7 +83,7 @@ page_protect();
 
 			<hr>
 
-			<div class="col-sm-3">			
+			<div class="col-sm-3"><a href="revenue_month.php">			
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
@@ -106,10 +106,10 @@ page_protect();
 							    	}
 							    }
 							}
-							echo $revenue;
+							echo "₹".$revenue;
 							?>
 						</div>
-				</div>
+				</div></a>
 			</div>
 			
 
