@@ -153,7 +153,7 @@ page_protect();
 							                <input type='hidden' name='udob' value='" . $udob . "'/>
 											
 							                <input type='hidden' name='ujoin' value='" . $ujoing . "'/>
-							                <input type='hidden' name='ugender' value='" . $ugender . "'/><input type='submit' class='a1-btn a1-green' id='button1' value='Health Status' class='btn btn-info'/></form></td></tr>";
+							                <input type='hidden' name='ugender' value='" . $ugender . "'/><input type='submit' class='a1-btn a1-blue' id='button1' value='Health Status' class='btn btn-info'/></form></td></tr>";
 							                $msgid = 0;
 							            }
 							        }

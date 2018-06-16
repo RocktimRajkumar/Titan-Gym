@@ -13,7 +13,7 @@ else if($flag==1)
   
 
 $res=mysqli_query($con,$query);
-echo "<tbody>";
+echo "<tbody border=1>";
 
 $sno    = 1;
 

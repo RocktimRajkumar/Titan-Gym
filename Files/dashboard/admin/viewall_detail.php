@@ -4,7 +4,6 @@ page_protect();
 
 if (isset($_POST['name'])) {
     $memid = $_POST['name'];
-    echo $memid;
 ?>
 
 <!DOCTYPE html>
