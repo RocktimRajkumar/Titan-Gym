@@ -156,18 +156,21 @@ if (isset($_POST['userID']) && isset($_POST['planID'])) {
 						</select></td></td>
              </tr>
              
-		<table id="plandetls">
-                 </table>
-			 
+		   
             
              <tr>
-             <tr>
+			  <table id="plandetls">
+             </table>
+			 
+            
+           </table></td>
+		   
+         </tr>
+		  <tr>
                <td height="35">&nbsp;</td>
-               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="ADD PAYMENT" >
+               <td height="35">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="ADD PAYMENT" >
                  <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
              </tr>
-           </table></td>
-         </tr>
          </table>
        </form>
     </div>

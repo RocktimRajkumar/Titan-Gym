@@ -108,39 +108,51 @@ if(isset($_POST['submit'])){
 		
 		<?php $user_id_auth = $_SESSION['user_data']; ?>
 
-		<form action=" " enctype="multipart/form-data" method="POST" role="form" class="form-horizontal form-groups-bordered">
-
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Id</label>					
-					<div class="col-sm-5">
-						<input type="text" name="login_id" value="<?php echo $_SESSION['user_data']; ?>" class="form-control" required/>
-					</div>
-			</div>
-
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Full Name</label>					
-					<div class="col-sm-5">
-						<input class="form-control" type="text" name="full_name" id="textfield2" value="<?php echo $_SESSION['username']; ?>" maxlength="25" required>
-					</div>
-			</div>
-
-			
-								  
-			<div class="form-group">
-				<label for="field-1" class="col-sm-3 control-label">Password</label>					
-					<div class="col-sm-5">
-						<p><span class="form-control">*********</span> <a href="change_pwd.php" class="btn">Change password</a> <span class="help-block">*For security reasons hidden</span></p>
-					</div>
-			</div>									
-
-			<div class="form-group">		
-					<div class="col-sm-offset-3 col-sm-5">
-						<input type="submit" class="btn btn-primary" value="Submit" name="submit">
-						<button type="reset" class="btn">Cancel</button>
-					</div>
-			</div>
-
-		</form>
+		
+		
+		
+		
+		<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:600px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>CHANGE PROFILE</h6>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="">
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">ID:</td>
+           	   <td height="35"><input type="text" name="login_id" value="<?php echo $_SESSION['user_data']; ?>" class="form-control" required/></td>
+         	   </tr>
+             <tr>
+               <td height="35">FULL NAME:</td>
+               <td height="35"><input class="form-control" type="text" name="full_name" id="textfield2" value="<?php echo $_SESSION['username']; ?>" maxlength="25" required></td>
+             </tr>
+             <tr>
+               <td height="35">PASSWORD</td>
+               <td height="35"><span class="form-control">*********</span> <a href="change_pwd.php" class="a1-btn a1-orange">Change password</a> <span class="help-block">*For security reasons hidden</span></td><br>
+             </tr>
+             
+             <br>
+            
+             <tr>
+             <tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="SUBMIT" >
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+		
+		
+		
+		
+		
 
 			<?php include('footer.php'); ?>
 
