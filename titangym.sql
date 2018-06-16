@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 15/06/2018 16:02:14
+ Date: 16/06/2018 20:48:25
 */
 
 SET NAMES utf8mb4;
@@ -111,13 +111,13 @@ CREATE TABLE `health_status`  (
 -- ----------------------------
 -- Records of health_status
 -- ----------------------------
-INSERT INTO `health_status` VALUES (3, '15', '175', '65', NULL, NULL, '1527696954');
-INSERT INTO `health_status` VALUES (4, NULL, NULL, NULL, NULL, NULL, '1527699183');
-INSERT INTO `health_status` VALUES (6, NULL, NULL, NULL, NULL, NULL, '1527699292');
-INSERT INTO `health_status` VALUES (8, NULL, NULL, NULL, NULL, NULL, '1527705448');
-INSERT INTO `health_status` VALUES (9, '65', '172', '65', '23', 'Very Impressive', '1527791878');
-INSERT INTO `health_status` VALUES (19, '23.4', '168', '59', '23.4', 'You need consistency', '1528186134');
-INSERT INTO `health_status` VALUES (20, '23', '172', '62', '34', 'Very impressive', '1529050312');
+INSERT INTO `health_status` VALUES (3, '65', '185', '73', '23', 'Very Impressive !!!', '1527696954');
+INSERT INTO `health_status` VALUES (4, '65', '185', '73', '23', 'Very Impressive !!!', '1527699183');
+INSERT INTO `health_status` VALUES (6, '65', '185', '73', '23', 'Very Impressive !!!', '1527699292');
+INSERT INTO `health_status` VALUES (8, '65', '185', '73', '23', 'Very Impressive !!!', '1527705448');
+INSERT INTO `health_status` VALUES (9, '65', '188', '73', '23', 'Very Impressive !!!', '1527791878');
+INSERT INTO `health_status` VALUES (19, '65', '185', '73', '23', 'Very Impressive !!!', '1528186134');
+INSERT INTO `health_status` VALUES (20, '65', '185', '73', '23', 'Very Impressive !!!', '1529050312');
 
 -- ----------------------------
 -- Table structure for plan
@@ -129,6 +129,7 @@ CREATE TABLE `plan`  (
   `description` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `validity` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `amount` int(10) NOT NULL,
+  `active` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`pid`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
@@ -136,11 +137,11 @@ CREATE TABLE `plan`  (
 -- ----------------------------
 -- Records of plan
 -- ----------------------------
-INSERT INTO `plan` VALUES ('BVDPWN', 'dfd', 'sdf', '2', 532);
-INSERT INTO `plan` VALUES ('GKZCJL', 'Quatarly', 'Pay your fees quartily', '4', 4000);
-INSERT INTO `plan` VALUES ('OIREAC', 'Yearly', 'Pay Yearrly', '12', 6000);
-INSERT INTO `plan` VALUES ('PMZBJS', 'Beginner', 'Basic', '3', 1400);
-INSERT INTO `plan` VALUES ('TYLFGN', 'monthly', 'regular', '1', 500);
+INSERT INTO `plan` VALUES ('BVDPWN', 'dfd', 'sdf', '2', 532, 'yes');
+INSERT INTO `plan` VALUES ('GKZCJL', 'Quatarly', 'Pay your fees quartily', '4', 4000, 'yes');
+INSERT INTO `plan` VALUES ('OIREAC', 'Yearly', 'Pay Yearrly', '12', 6000, 'yes');
+INSERT INTO `plan` VALUES ('PMZBJS', 'Beginner', 'Basic', '3', 1400, 'yes');
+INSERT INTO `plan` VALUES ('TYLFGN', 'monthly', 'regular', '1', 500, 'yes');
 
 -- ----------------------------
 -- Table structure for timetable
@@ -187,7 +188,7 @@ INSERT INTO `users` VALUES ('1527696954', 'Rajkumar Rocktim Narayan Singha', 'Ma
 INSERT INTO `users` VALUES ('1527699183', 'hello world', 'Female', '2345678912', 'hello@gmail.com', '1998-02-10', '2018-05-28');
 INSERT INTO `users` VALUES ('1527699292', 'sdf', 'Male', '2343243', '2342@dfsd.com', '1994-12-08', '2018-04-25');
 INSERT INTO `users` VALUES ('1527705448', 'Rounak Dutta', 'Male', '8011806046', 'rdutta7743@gmail.com', '1995-02-10', '2018-03-06');
-INSERT INTO `users` VALUES ('1527791878', 'Bishal Bhal', 'Male', '987600243', 'bishal12@gmail.com', '1994-12-01', '2018-01-06');
+INSERT INTO `users` VALUES ('1527791878', 'Bishal Bhattercherjee', 'Male', '987600943', 'bishal123@gmail.com', '1994-12-01', '2018-01-06');
 INSERT INTO `users` VALUES ('1528186134', 'Telusko Learning ', 'Male', '7896543210', 'telusko@gmail.com', '1994-02-22', '2018-06-06');
 INSERT INTO `users` VALUES ('1529050312', 'Debojit Gogoi', 'Male', '7894561230', 'debojit@gmail.com', '1996-11-29', '2018-06-15');
 

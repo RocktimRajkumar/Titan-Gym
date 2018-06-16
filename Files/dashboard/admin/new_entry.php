@@ -151,7 +151,7 @@ page_protect();
                <td height="35"><select name="plan" id="boxx" required onchange="myplandetail(this.value)">
 					<option value="">--Please Select--</option>
 					<?php
-						$query="select * from plan";
+						$query="select * from plan where active='yes'";
 						$result=mysqli_query($con,$query);
 						if(mysqli_affected_rows($con)!=0){
 							while($row=mysqli_fetch_row($result)){
