@@ -189,7 +189,7 @@ if (isset($_POST['name'])) {
              </tr>
 			 <tr>
                <td height="35">STATE:</td>
-               <td height="35"><input type="text" id="boxxe" name="state" value="Assam"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" name="state" value="Assam"></td>
              </tr>
 			 <tr>
                <td height="35">CITY:</td>
