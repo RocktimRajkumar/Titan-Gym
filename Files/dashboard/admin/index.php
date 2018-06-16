@@ -134,7 +134,7 @@ page_protect();
 				</div></a>
 			</div>	
 				
-			<div class="col-sm-3">			
+			<div class="col-sm-3"><a href="over_members_month.php">			
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
@@ -155,7 +155,7 @@ page_protect();
 							$i = 1;
 							?>
 						</div>
-				</div>			
+				</div></a>			
 			</div>
 
 			<div class="col-sm-3"><a href="view_plan.php">			
