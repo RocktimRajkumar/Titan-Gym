@@ -10,9 +10,9 @@
 	<li class="" id="hassubopen"><a href="#" onclick="memberExpand(1)"><i class="entypo-users"></i><span>Members</span></a>
 		<ul id="memExpand">
 			<li class="active">
-				<a href="view_mem.php"><span>View Members</span></a></li>
+				<a href="view_mem.php"><span>Edit Members</span></a></li>
 
-			<li><a href="table_view.php"><span>View / Enter Schedule</span></a></li>
+			<li><a href="table_view.php"><span>View Memeber</span></a></li>
 		</ul>
 	</li>
 
