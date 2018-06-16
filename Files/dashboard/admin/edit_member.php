@@ -22,7 +22,10 @@ if (isset($_POST['name'])) {
 	{
 	width:126px;
 	}
-
+	#boxxe
+	{
+		width:230px;
+	}
 	.page-container .sidebar-menu #main-menu li#hassubopen > a {
 	background-color: #2b303a;
 	color: #ffffff;
@@ -85,14 +88,9 @@ if (isset($_POST['name'])) {
 						</ul>
 					</div>
 			</div>
-
-		<h3>Edit Member Details</h3>
-
-		<hr />
-
-			<form action="edit_mem_submit.php" method="POST" >
-
-				<?php
+			<h3>Edit Member Details</h3>
+			<hr/>
+			<?php
 	    
 				    $query  = "SELECT * FROM users u 
 				    		   INNER JOIN address a ON u.userid=a.id
@@ -132,77 +130,99 @@ if (isset($_POST['name'])) {
 
 				?>
 
-				<table>
-					<tr>
-						<td><label>User ID:</label></td>
-						<td><input type="text" name="uid" readonly required value=<?php echo $memid?>></td>
-					</tr>
-					<tr>
-						<td><label>Name:</label></td>
-						<td><input type="text" name="uname" value='<?php echo $name?>'></td>
-					</tr>
-					<tr>
-						<td><label>Gender:</label></td>
-						<td height="35"><select name="gender" id="gender" required>
+
+			
+			
+			<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:600px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>EDIT MEMBER PROFILE</h6>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="edit_mem_submit.php">
+         <table width="100%" border="0" align="center">
+         <tr>
+           <td height="35"><table width="100%" border="0" align="center">
+           	 <tr>
+           	   <td height="35">User ID:</td>
+           	   <td height="35"><input id="boxxe" type="text" name="uid" readonly required value=<?php echo $memid?>></td>
+         	   </tr>
+             <tr>
+               <td height="35">NAME:</td>
+               <td height="35"><input id="boxxe" type="text" name="uname" value='<?php echo $name?>'></td>
+             </tr>
+             <tr>
+               <td height="35">GENDER:</td>
+               <td height="35"><select id="boxxe" name="gender" id="gender" required>
 
 						<option <?php if($gender == 'Male'){echo("selected");}?> value="Male">Male</option>
 						<option <?php if($gender == 'Female'){echo("selected");}?> value="Female">Female</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td><label>Mobile:</label></td>
-						<td><input type="number" name="phone" maxlength="10" value=<?php echo $mobile?>></td>
-					</tr>
-					<tr>
-						<td><label>Email:</label></td>
-						<td><input type="email" name="email" required value=<?php echo $email?>></td>
-					</tr>
-					<tr>
-						<td><label>DOB:</label></td>
-						<td><input type="date" name="dob" value=<?php echo $dob?>></td>
-					</tr>
-					<tr>
-						<td><label>Joining Date:</label></td>
-						<td><input type="date" name="jdate" value=<?php echo $jdate?>></td>
-					</tr>
-					<tr>
-						<td><label>Street Name:</label></td>
-						<td><input type="text" name="stname" value='<?php echo $streetname?>'></td>
-					</tr>
-					<tr>
-						<td><label>State:</label></td>
-						<td><input type="text" name="state" value='<?php echo $state?>'></td>
-					</tr>
-					<tr>
-						<td><label>City:</label></td>
-						<td><input type="text" name="city" value='<?php echo $city?>'></td>
-					</tr>
-					<tr>
-						<td><label>Calorie:</label></td>
-						<td><input type="text" name="calorie" value=<?php echo $calorie?>></td>
-					</tr>
-					<tr>
-						<td><label>Height:</label></td>
-						<td><input type="text" name="height" value=<?php echo $height?>></td>
-					</tr>
-					<tr>
-						<td><label>Weight:</label></td>
-						<td><input type="text" name="weight" value=<?php echo $weight?>></td>
-					</tr>
-					<tr>
-						<td><label>Fat:</label></td>
-						<td><input type="text" name="fat" value=<?php echo $fat?>></td>
-					</tr>
-					<tr>
-						<td><label>Remarks:</label></td>
-						<td><textarea name="remarks" row='35'><?php echo $remarks?></textarea></td>
-					</tr>
-				</table>
-
-				<input type="submit" value="Update">
-				<input type="reset" value="Cancel">
-				
-			</form>
+						</select></td><br>
+             </tr>
+			  <tr>
+               <td height="35">MOBILE:</td>
+               <td height="35"><input id="boxxe" type="number" name="phone" maxlength="10" value=<?php echo $mobile?>></td>
+             </tr>
+             <tr>
+               <td height="35">EMAIL:</td>
+               <td height="35"><input id="boxxe" type="email" name="email" required value=<?php echo $email?>></td>
+             </tr>
+			 <tr>
+               <td height="35">DATE OF BIRTH:</td>
+               <td height="35"><input type="date" id="boxxe" name="dob" value=<?php echo $dob?>></td>
+             </tr>
+			 <tr>
+               <td height="35">JOINING DATE:</td>
+               <td height="35"><input type="date" id="boxxe" name="jdate" value=<?php echo $jdate?>></td>
+             </tr>
+			 <tr>
+               <td height="35">STATE:</td>
+               <td height="35"><input type="text" id="boxxe" name="state" value='<?php echo $state?>'></td>
+             </tr>
+			 <tr>
+               <td height="35">CITY:</td>
+               <td height="35"><input type="text" id="boxxe" name="city" value='<?php echo $city?>'></td>
+             </tr>
+			 <tr>
+               <td height="35">CALORIE:</td>
+               <td height="35"><input type="text" id="boxxe" name="calorie" value=<?php echo $calorie?>></td>
+             </tr>
+			 <tr>
+               <td height="35">HEIGHT:</td>
+               <td height="35"><input type="text" id="boxxe" name="height" value=<?php echo $height?>></td>
+             </tr>
+			 <tr>
+               <td height="35">WEIGHT:</td>
+               <td height="35"><input type="text" id="boxxe" name="weight" value=<?php echo $weight?>></td>
+             </tr>
+			 <tr>
+               <td height="35">FAT:</td>
+               <td height="35"><input type="text" id="boxxe" name="fat" value=<?php echo $fat?>></td>
+             </tr>
+			 <tr>
+               <td height="35">REMARKS:</td>
+               <td height="35"><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" id="boxxe" ><?php echo $remarks?></textarea></td>
+             </tr>
+			 
+			 
+			 
+             <br>
+            
+             <tr>
+             <tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="UPDATE" >
+                 <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
+             </tr>
+           </table></td>
+         </tr>
+         </table>
+       </form>
+    </div>
+    </div>   
+			
+			
+			
+			
 					
 
 			<?php include('footer.php'); ?>

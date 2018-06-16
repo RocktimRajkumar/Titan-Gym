@@ -52,11 +52,11 @@
 			</li>
 
 			<li>
-				<a href=""><span>Edit Routine</span></a>
+				<a href="editroutine.php"><span>Edit Routine</span></a>
 			</li>
 
 			<li>
-				<a href=""><span>View Routine</span></a>
+				<a href="viewroutine.php"><span>View Routine</span></a>
 			</li>
 
 		</ul>

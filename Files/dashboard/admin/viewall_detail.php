@@ -22,6 +22,10 @@ if (isset($_POST['name'])) {
 	{
 	width:126px;
 	}
+	#boxxe
+	{
+		width:230px;
+	}
 
 	.page-container .sidebar-menu #main-menu li#hassubopen > a {
 	background-color: #2b303a;
@@ -90,9 +94,7 @@ if (isset($_POST['name'])) {
 
 		<hr />
 
-			<form action="edit_member.php" method="POST" >
-
-				<?php
+			<?php
 	    
 				    $query  = "SELECT * FROM users u 
 				    		   INNER JOIN address a ON u.userid=a.id
@@ -140,98 +142,120 @@ if (isset($_POST['name'])) {
 
 
 				?>
-
-				<table>
-					<tr>
-						<td><label>User ID:</label></td>
-						<td><input type="text" name="name" readonly required value=<?php echo $memid?>></td>
-					</tr>
-					<tr>
-						<td><label>Name:</label></td>
-						<td><input type="text" readonly value='<?php echo $name?>'></td>
-					</tr>
-					<tr>
-						<td><label>Gender:</label></td>
-						<td height="35"><input type="text" readonly value=<?php echo $gender?>></td>
-					</tr>
-					<tr>
-						<td><label>Mobile:</label></td>
-						<td><input type="text" readonly maxlength="10" value=<?php echo $mobile?>></td>
-					</tr>
-					<tr>
-						<td><label>Email:</label></td>
-						<td><input type="email" readonly required value=<?php echo $email?>></td>
-					</tr>
-					<tr>
-						<td><label>DOB:</label></td>
-						<td><input type="text" readonly value=<?php echo $dob?>></td>
-					</tr>
-					<tr>
-						<td><label>Joining Date:</label></td>
-						<td><input type="text" readonly value=<?php echo $jdate?>></td>
-					</tr>
-					<tr>
-						<td><label>Street Name:</label></td>
-						<td><input type="text" readonly value='<?php echo $streetname?>'></td>
-					</tr>
-					<tr>
-						<td><label>State:</label></td>
-						<td><input type="text" name="state" value='<?php echo $state?>'></td>
-					</tr>
-					<tr>
-						<td><label>City:</label></td>
-						<td><input type="text" readonly value='<?php echo $city?>'></td>
-					</tr>
-					<tr>
-						<td><label>Calorie:</label></td>
-						<td><input type="text" readonly value=<?php echo $calorie?>></td>
-					</tr>
-					<tr>
-						<td><label>Height:</label></td>
-						<td><input type="text" readonly value=<?php echo $height?>></td>
-					</tr>
-					<tr>
-						<td><label>Weight:</label></td>
-						<td><input type="text" readonly value=<?php echo $weight?>></td>
-					</tr>
-					<tr>
-						<td><label>Fat:</label></td>
-						<td><input type="text" readonly value=<?php echo $fat?>></td>
-					</tr>
-					<tr>
-						<td><label>Plan Name:</label></td>
-						<td><input type="text" readonly value='<?php echo $planname?>'></td>
-					</tr>
-					<tr>
-						<td><label>Plan Amount:</label></td>
-						<td><input type="text" readonly value=<?php echo $pamount?>></td>
-					</tr>
-					<tr>
-						<td><label>Plan Validity:</label></td>
-						<td><input type="text" readonly value='<?php echo $pvalidity.' Month'?>'></td>
-					</tr>
-					<tr>
-						<td><label>Plan Description:</label></td>
-						<td><input type="text" readonly value='<?php echo $pdescription?>'></td>
-					</tr>
-					<tr>
-						<td><label>Paid Date:</label></td>
-						<td><input type="text" readonly value=<?php echo $paiddate?>></td>
-					</tr>
-					<tr>
-						<td><label>Expired Date:</label></td>
-						<td><input type="text" readonly value=<?php echo $expire?>></td>
-					</tr>
-					<tr>
-						<td><label>Remarks:</label></td>
-						<td><textarea readonly row='35'><?php echo $remarks?></textarea></td>
-					</tr>
-				</table>
-
-				<input type="submit" value="Edit">
-				<button><a href="table_view"> Back </a></button>
-				
-			</form>
+			
+			
+			
+			
+			<div class="a1-container a1-small a1-padding-32" style="margin-top:2px; margin-bottom:2px;">
+        <div class="a1-card-8 a1-light-gray" style="width:600px; margin:0 auto;">
+		<div class="a1-container a1-dark-gray a1-center">
+        	<h6>Edit Member Details</h3>
+        </div>
+       <form id="form1" name="form1" method="post" class="a1-container" action="edit_member.php">
+         <table width="100%" border="0" align="center">
+         <tbody><tr>
+           <td height="35">
+           	 </td></tr><tr>
+           	   <td height="35">USER ID:</td>
+           	   <td height="35"><input type="text" name="name" id="boxxe" readonly="" required="" value="1527791878"></td>
+         	   </tr>
+             <tr>
+               <td height="35">NAME:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="Bishal Bhal"></td>
+             </tr>
+             <tr>
+               <td height="35">GENDER:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="Male"></td>
+             </tr>
+			 <tr>
+               <td height="35">MOBILE:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" maxlength="10" value="987600243"></td>
+             </tr>
+			 <tr>
+               <td height="35">EMAIL:</td>
+               <td height="35"><input type="email" id="boxxe" readonly="" required="" value="bishal12@gmail.com"></td>
+             </tr>
+			 <tr>
+               <td height="35">DATE OF BIRTH</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="1994-12-01"></td>
+             </tr>
+			 <tr>
+               <td height="35">JOINING DATE:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="2018-01-06"></td>
+             </tr>
+			 <tr>
+               <td height="35">STREET NAME:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="Choladhara"></td>
+             </tr>
+			 <tr>
+               <td height="35">STATE:</td>
+               <td height="35"><input type="text" id="boxxe" name="state" value="Assam"></td>
+             </tr>
+			 <tr>
+               <td height="35">CITY:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="Jorhat"></td>
+             </tr>
+			 <tr>
+               <td height="35">CALORIE:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value="65"></td>
+             </tr>
+			 <tr>
+               <td height="35">HEIGHT:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="172"></td>
+             </tr>
+			 <tr>
+               <td height="35">WEIGHT:</td>
+               <td height="35"><input type="text" readonly="" value="65" id="boxxe"></td>
+             </tr>
+			 <tr>
+               <td height="35">FAT:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="23"></td>
+             </tr>
+			 <tr>
+               <td height="35">PLAN NAME:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="monthly"></td>
+             </tr>
+			 <tr>
+               <td height="35">PLAN AMOUNT:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="500"></td>
+             </tr>
+			  <tr>
+               <td height="35">PLAN VALIDITY:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="1 Month"></td>
+             </tr>
+			  <tr>
+               <td height="35">PLAN DESCRIPTION:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="regular"></td>
+             </tr>
+			  <tr>
+               <td height="35">PAID DATE:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="2018-06-01"></td>
+             </tr>
+			 <tr>
+               <td height="35">EXPIRED DATE:</td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value="2018-07-01"></td>
+             </tr>
+			 <tr>
+               <td height="35">REMARKS:</td>
+               <td height="35"><textarea readonly style="resize:none; margin: 0px; width: 230px; height: 53px;"  ><?php echo $remarks?></textarea></td>
+             </tr>
+            
+             
+            
+             <tr>
+             </tr><tr>
+               <td height="35">&nbsp;</td>
+               <td height="35"><input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="EDIT">
+                 <a href="table_view"><input class="a1-btn a1-blue" id="" value="BACK"></a></td>
+             </tr>
+           
+         
+         </tbody></table>
+       
+    </div>
+    </div>   
+			
+			
 					
 
 			<?php include('footer.php'); ?>

@@ -1,29 +1,29 @@
-﻿
 <?php
 require '../../include/db_conn.php';
 page_protect();
+ 
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <title>Titan Gym| View Plan</title>
+    <title>Titan Gym | View Routine</title>
     <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 	<link href="a1style.css" rel="stylesheet" type="text/css">
 	<style>
- 		#button1
-		{
-		width:126px;
+    	.page-container .sidebar-menu #main-menu li#routinehassubopen > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
 		}
-		.page-container .sidebar-menu #main-menu li#planhassubopen > a {
-    		background-color: #2b303a;
-    		color: #ffffff;
-		}
-	</style>
+
+    </style>
+
 </head>
      <body class="page-body  page-fade" onload="collapseSidebar()">
 
@@ -82,63 +82,75 @@ page_protect();
 					
 				</div>
 
-		<h3>Manage Plan</h3>
+		
+
+		
+			<h2>Routines</h2>
 
 		<hr />
-
+		
 		<table class="table table-bordered datatable" id="table-1" border=1>
-
-			<thead>
+			
 				<tr>
-					<th>S.No</th>
-					<th>Plan ID</th>
-					<th>Plan name</th>
-					<th>Details</th>
-					<th>Months</th>
-					<th>Rate</th>
-					<th>Action</th>
+					<th>Sl.No</th>
+					<th>Routine Name</th>
+					<th>Routine Details</th>
 				</tr>
-			</thead>		
+		
 				<tbody>
-					<?php
+
+				<?php
 
 
-					$query  = "select * from plan ORDER BY amount DESC";
+					$query  = "select * from timetable";
 					//echo $query;
 					$result = mysqli_query($con, $query);
 					$sno    = 1;
 
-					if (mysqli_affected_rows($con) != 0) {
-					    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-					        $msgid = $row['pid'];
+					if (mysqli_affected_rows($con) != 0) 
+					{
+					    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
+						{
+
+					       
+					           
+					                
+					                 echo "<tr><td>".$sno."</td>";
+					                echo "<td>" . $row['tname'] . "</td>";
+					           
+					                
+					                $sno++;
+					                
+					              echo '<td><a href="viewdetailroutine.php?id='.$row['tid'].'"><input type="button" class="a1-btn a1-blue" value="View Details" ></a></td></tr>';
+									
+					                $uid = 0;
+					            
 					        
-					        
-					        echo "<tr><td>" . $sno . "</td>";
-					        echo "<td>" . $row['pid'] . "</td>";
-					        echo "<td>" . $row['planName'] . "</td>";
-					        echo "<td>" . $row['description'] . "</td>";
-					        echo "<td>" . $row['validity'] . "</td>";
-					        echo "<td>₹" . $row['amount'] . "</td>";
-					        
-					        $sno++;
-					        
-					        echo "<td><form action='edit_plan.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit Plan ' id='button1' class='a1-btn a1-blue'/></form><form action='del_plan.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' id='button1' value='Delete Plan' class='a1-btn a1-orange'/></form></td></tr>";
-					        $msgid = 0;
 					    }
-					    
 					}
 
-					?>																
+					?>									
 				</tbody>
+
 		</table>
 
 
-<?php include('footer.php'); ?>
+				
+		
+		
+		
+		
+		
+		
+		
+
+			
+
     	</div>
 
     </body>
+	<?php include('footer.php'); ?>
 </html>
 
 
-
-				
+										
