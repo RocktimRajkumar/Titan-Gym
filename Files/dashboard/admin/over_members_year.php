@@ -1,5 +1,5 @@
 ﻿<?php
-require 'db_conn.php';
+require '../../include/db_conn.php';
 page_protect();
 ?>
 
@@ -7,97 +7,23 @@ page_protect();
 <html lang="en">
 <head>
 
-    <title>Sam's Slim Gym</title>
-    <link rel="stylesheet" href="../../neon/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css"  id="style-resource-1">
-    <link rel="stylesheet" href="../../neon/css/font-icons/entypo/css/entypo.css"  id="style-resource-2">
-    <link rel="stylesheet" href="../../neon/css/font-icons/entypo/css/animation.css"  id="style-resource-3">
-    <link rel="stylesheet" href="../../neon/css/neon.css"  id="style-resource-5">
-    <link rel="stylesheet" href="../../neon/css/custom.css"  id="style-resource-6">
-
-    	<!-- Theme framework -->
-	<script src="../../js/eakroko.min.js"></script>
-	<!-- Theme scripts -->
-	<script src="../../js/application.min.js"></script>
-	<!-- Just for demonstration -->
-	<script src="../../js/demonstration.min.js"></script>
-
-    <script src="../../neon/js/jquery-1.10.2.min.js"></script>
-
-	<script src="../../js/plugins/jquery-ui/jquery.ui.core.min.js"></script>
-	<script src="../../js/plugins/jquery-ui/jquery.ui.widget.min.js"></script>
-	<script src="../../js/plugins/jquery-ui/jquery.ui.mouse.min.js"></script>
-	<script src="../../js/plugins/jquery-ui/jquery.ui.resizable.min.js"></script>
-	<script src="../../js/plugins/jquery-ui/jquery.ui.spinner.js"></script>
-	<script src="../../js/plugins/jquery-ui/jquery.ui.slider.js"></script>
-
-
-    <script type="text/javascript">
-		$(document).ready(function()
-		{
-		$(".country").change(function()
-		{
-		var id=$(this).val();
-		var dataString = 'id='+ id;
-
-		$.ajax
-		({
-		type: "POST",
-		url: "ajax_city.php",
-		data: dataString,
-		cache: false,
-		success: function(html)
-		{
-		$(".city").html(html);
-		} 
-		});
-
-		});
-		});
-		    </script>
-		<script type="text/javascript">
-		$(document).ready(function()
-		{
-		$(".country1").change(function()
-		{
-		var id=$(this).val();
-		var dataString = 'id='+ id;
-
-		$.ajax
-		({
-		type: "POST",
-		url: "ajax_city1.php",
-		data: dataString,
-		cache: false,
-		success: function(html)
-		{
-		$(".city1").html(html);
-		} 
-		});
-
-		});
-		});
-    </script>
-
-
-    <SCRIPT LANGUAGE="JavaScript">
-		function checkIt(evt) {
-		    evt = (evt) ? evt : window.event
-		    var charCode = (evt.which) ? evt.which : evt.keyCode
-		    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-		        status = "This field accepts numbers only."
-		        return false
-		    }
-		    status = ""
-		    return true
+    <title>Titan Gym | Member per month</title>
+     <link rel="stylesheet" href="../../css/style.css"  id="style-resource-5">
+    <script type="text/javascript" src="../../js/Script.js"></script>
+    <link rel="stylesheet" href="../../css/dashMain.css">
+    <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
+     <style>
+    	.page-container .sidebar-menu #main-menu li#overviewhassubopen > a {
+    	background-color: #2b303a;
+    	color: #ffffff;
 		}
-	</SCRIPT>
 
-	<script type="text/javascript" src="webcam.js"></script>
+    </style>
 
 </head>
-    <body class="page-body  page-fade">
+    <body class="page-body  page-fade" onload="collapseSidebar();showMember();">
 
-    	<div class="page-container">	
+    	<div class="page-container sidebar-collapsed" id="navbarcollapse">	
 	
 		<div class="sidebar-menu">
 	
@@ -106,25 +32,19 @@ page_protect();
 			<!-- logo -->
 			<div class="logo">
 				<a href="main.php">
-					<img src="../../img/logo.png" alt="" width="192" height="80" />
+					<img src="../../images/logo.png" alt="" width="192" height="80" />
 				</a>
 			</div>
 			
 					<!-- logo collapse icon -->
-					<div class="sidebar-collapse">
+					<div class="sidebar-collapse" onclick="collapseSidebar()">
 				<a href="#" class="sidebar-collapse-icon with-animation"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
 					<i class="entypo-menu"></i>
 				</a>
 			</div>
 							
 			
-			<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
-			<div class="sidebar-mobile-menu visible-xs">
-				<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
-					<i class="entypo-menu"></i>
-				</a>
-			</div>
-			
+		
 			</header>
     		<?php include('nav.php'); ?>
     	</div>
@@ -162,45 +82,61 @@ page_protect();
 
 		<hr />
 
-			<form action="over_month.php" method="POST" class='form-horizontal form-bordered'>
+	<form>
+		<?php
+		// set start and end year range
+		$yearArray = range(2000, date('Y'));
+		?>
+		<!-- displaying the dropdown list -->
+		<select name="year" id="syear">
+		    <option value="0">Select Year</option>
+		    <?php
+		    foreach ($yearArray as $year) {
+		        // if you want to select a particular year
+		        $selected = ($year == date('Y')) ? 'selected' : '';
+		        echo '<option '.$selected.' value="'.$year.'">'.$year.'</option>';
+		    }
+		    ?>
+		</select>
+	<input type="button" name="search" onclick="showMember();" value="Search">
 
-				<div class="form-group">
-					<label for="field-1" class="col-sm-3 control-label">From :</label>					
-						<div class="col-sm-5">
-							<input type="text" name="from" id="textfield22"  class="form-control datepicker" value="<?php echo date('Y-m-d'); ?>">
-						</div>
-				</div>
+	</form>
+
+	<table id="meyear">
+	
+	</table>
 
 
-				<div class="form-group">
-					<label for="field-1" class="col-sm-3 control-label">To :</label>					
-						<div class="col-sm-5">
-							 <input type="text" name="to" id="textfield22" class="form-control datepicker" value="<?php echo date('Y-m-d'); ?>">
-						</div>
-				</div>
-	 
-				<div class="form-actions">
-						<button type="submit" class="btn btn-primary">Save changes</button>
-				</div>
-			
-			</form>
+<script>
+
+  function showMember(){
+  	var year=document.getElementById("syear");
+  	var iyear=year.selectedIndex;
+  	var ynumber=year.options[iyear].value;
+  	if(ynumber=="0"){
+      document.getElementById("meyear").innerHTML="";
+      return;
+  	}
+  	else{
+  		if(window.XMLHttpRequest){
+  			xmlhttp=new XMLHttpRequest();
+  		}
+  		xmlhttp.onreadystatechange=function(){
+  			if(this.readyState==4 && this.status ==200){
+  				document.getElementById("meyear").innerHTML=this.responseText;
+  			}
+  		};
+  		xmlhttp.open("GET","over_month.php?mm=0&flag=1&yy="+ynumber,true);
+  		xmlhttp.send();
+  	}
+
+  }
+
+</script>
+
 <?php include('footer.php'); ?>
 
    	</div>
-
-
-    <script src="../../neon/js/gsap/main-gsap.js" id="script-resource-1"></script>
-    <script src="../../neon/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js" id="script-resource-2"></script>
-    <script src="../../neon/js/bootstrap.min.js" id="script-resource-3"></script>
-    <script src="../../neon/js/joinable.js" id="script-resource-4"></script>
-    <script src="../../neon/js/resizeable.js" id="script-resource-5"></script>
-    <script src="../../neon/js/neon-api.js" id="script-resource-6"></script>
-    <script src="../../neon/js/jquery.validate.min.js" id="script-resource-7"></script>
-    <script src="../../neon/js/neon-login.js" id="script-resource-8"></script>
-    <script src="../../neon/js/neon-custom.js" id="script-resource-9"></script>
-    <script src="../../neon/js/neon-demo.js" id="script-resource-10"></script>
-
-    <script src="../../neon/js/bootstrap-datepicker.js" id="script-resource-11"></script>
 
     </body>
 </html>

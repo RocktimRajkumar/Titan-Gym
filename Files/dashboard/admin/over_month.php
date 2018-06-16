@@ -2,9 +2,14 @@
 require '../../include/db_conn.php';
 $month=$_GET['mm'];
 $year=$_GET['yy'];
+$flag=$_GET['flag'];
 
-$query="select * from users u INNER JOIN address a on u.userid=a.id where u.joining_date like '".$year."-".$month."___'";
+$query="";
 
+if($flag==0)
+	$query="select * from users u INNER JOIN address a on u.userid=a.id where u.joining_date like '".$year."-".$month."___'";
+else if($flag==1)
+	$query="select * from users u INNER JOIN address a on u.userid=a.id where u.joining_date like '".$year."______'";
   
 
 $res=mysqli_query($con,$query);
@@ -60,7 +65,10 @@ if (mysqli_affected_rows($con) != 0) {
 
 }
 else{
-	echo "<h2>No Data found On ".$year."-".$month."</h2";
+	if($flag==0)
+		echo "<h2>No Data found On ".$year."-".$month."</h2";
+	else if($flag==1)
+		echo "<h2>No Data found On ".$year."</h2";
 }
 echo "</tbody>";
 

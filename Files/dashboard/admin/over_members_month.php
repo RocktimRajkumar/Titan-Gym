@@ -157,7 +157,7 @@ page_protect();
   				document.getElementById("memmonth").innerHTML=this.responseText;
   			}
   		};
-  		xmlhttp.open("GET","over_month.php?mm="+mnumber+"&yy="+ynumber,true);
+  		xmlhttp.open("GET","over_month.php?mm="+mnumber+"&yy="+ynumber+"&flag=0",true);
   		xmlhttp.send();
   	}
 
