@@ -117,8 +117,12 @@ page_protect();
         </div>
        <form id="form1" name="form1" method="post" class="a1-container" action="updateroutine.php">
 		<table width="619" height="673" border="0" align="center">
+			<tr>
+				<td><input type="hidden" name='tid' value='<?php echo $id?>'></td>
+			</tr>
   <tr>
-    <td height="87" colspan="2">Routine Name:<?php echo $row['tname'] ?> &ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;</td>
+  	<td width='186' height='103'>Routine Name:</td>
+    <td height="87" colspan="2"><input type="text" name='routinename' value='<?php echo $row['tname'] ?>'></td>
     </tr>
   <tr>
     <td width="186" height="103">Day 1:</td>
@@ -126,23 +130,23 @@ page_protect();
   </tr>
   <tr>
     <td height="96">Day 2:</td>
-    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" name="day2" id="boxxe" ><?php echo $row['day2'] ?></textarea></td>
+    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="day2" id="boxxe" ><?php echo $row['day2'] ?></textarea></td>
   </tr>
   <tr>
     <td height="87">Day 3:</td>
-    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" name="day3" id="boxxe" ><?php echo $row['day3'] ?></textarea></td>
+    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;"  name="day3" id="boxxe" ><?php echo $row['day3'] ?></textarea></td>
   </tr>
   <tr>
     <td height="92">Day 4:</td>
-    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" name="day4" id="boxxe" ><?php echo $row['day4'] ?></textarea></td>
+    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;"  name="day4" id="boxxe" ><?php echo $row['day4'] ?></textarea></td>
   </tr>
   <tr>
     <td height="84">Day 5:</td>
-    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" name="day5" id="boxxe" ><?php echo $row['day5'] ?></textarea></td>
+    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;"  name="day5" id="boxxe" ><?php echo $row['day5'] ?></textarea></td>
   </tr>
   <tr>
     <td height="75">Day 6:</td>
-    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;" name="remarks" name="day6" id="boxxe" ><?php echo $row['day6'] ?></textarea></td>
+    <td><textarea style="resize:none; margin: 0px; width: 230px; height: 53px;"  name="day6" id="boxxe" ><?php echo $row['day6'] ?></textarea></td>
   </tr>
   <tr>
                <td height="35">&nbsp;</td>
@@ -150,17 +154,9 @@ page_protect();
 			  <input class="a1-btn a1-blue" type="submit" name="submit" id="submit" value="Update">
                  <input class="a1-btn a1-blue" type="reset" name="reset" id="reset" value="Reset"></td>
              </tr>
-        </table></div>
+        </table>
+    </form></div>
     </div>   
-
-				
-		
-		
-		
-		
-		
-		
-		
 
 			
 
