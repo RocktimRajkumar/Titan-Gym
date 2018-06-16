@@ -4,6 +4,7 @@ page_protect();
 
 if (isset($_POST['name'])) {
     $memid = $_POST['name'];
+    echo $memid;
 ?>
 
 <!DOCTYPE html>
@@ -157,83 +158,83 @@ if (isset($_POST['name'])) {
            <td height="35">
            	 </td></tr><tr>
            	   <td height="35">USER ID:</td>
-           	   <td height="35"><input type="text" name="name" id="boxxe" readonly="" required="" value="1527791878"></td>
+           	   <td height="35"><input type="text" name="name" id="boxxe" readonly="" required="" value='<?php echo $memid?>'></td>
          	   </tr>
              <tr>
                <td height="35">NAME:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="Bishal Bhal"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $name?>'></td>
              </tr>
              <tr>
                <td height="35">GENDER:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="Male"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $gender?>'></td>
              </tr>
 			 <tr>
                <td height="35">MOBILE:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" maxlength="10" value="987600243"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" maxlength="10" value='<?php echo $mobile ?>'></td>
              </tr>
 			 <tr>
                <td height="35">EMAIL:</td>
-               <td height="35"><input type="email" id="boxxe" readonly="" required="" value="bishal12@gmail.com"></td>
+               <td height="35"><input type="email" id="boxxe" readonly="" required="" value='<?php echo $email?>'></td>
              </tr>
 			 <tr>
                <td height="35">DATE OF BIRTH</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="1994-12-01"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $dob?>'></td>
              </tr>
 			 <tr>
                <td height="35">JOINING DATE:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="2018-01-06"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $jdate?>'></td>
              </tr>
 			 <tr>
                <td height="35">STREET NAME:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="Choladhara"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $streetname?>'></td>
              </tr>
 			 <tr>
                <td height="35">STATE:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" name="state" value="Assam"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" name="state" value='<?php echo $state?>'></td>
              </tr>
 			 <tr>
                <td height="35">CITY:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="Jorhat"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $city?>'></td>
              </tr>
 			 <tr>
                <td height="35">CALORIE:</td>
-               <td height="35"><input type="text" id="boxxe" readonly="" value="65"></td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $calorie?>'></td>
              </tr>
 			 <tr>
                <td height="35">HEIGHT:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="172"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $height?>'></td>
              </tr>
 			 <tr>
                <td height="35">WEIGHT:</td>
-               <td height="35"><input type="text" readonly="" value="65" id="boxxe"></td>
+               <td height="35"><input type="text" readonly="" value='<?php echo $weight?>' id="boxxe"></td>
              </tr>
 			 <tr>
                <td height="35">FAT:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="23"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $weight?>'></td>
              </tr>
 			 <tr>
                <td height="35">PLAN NAME:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="monthly"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $planname?>'></td>
              </tr>
 			 <tr>
                <td height="35">PLAN AMOUNT:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="500"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $pamount?>'></td>
              </tr>
 			  <tr>
                <td height="35">PLAN VALIDITY:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="1 Month"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $pvalidity.' Month'?>'></td>
              </tr>
 			  <tr>
                <td height="35">PLAN DESCRIPTION:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="regular"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $pdescription?>'></td>
              </tr>
 			  <tr>
                <td height="35">PAID DATE:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="2018-06-01"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $paiddate?>'></td>
              </tr>
 			 <tr>
                <td height="35">EXPIRED DATE:</td>
-               <td height="35"><input type="text" readonly="" id="boxxe" value="2018-07-01"></td>
+               <td height="35"><input type="text" readonly="" id="boxxe" value='<?php echo $expire?>'></td>
              </tr>
 			 <tr>
                <td height="35">REMARKS:</td>

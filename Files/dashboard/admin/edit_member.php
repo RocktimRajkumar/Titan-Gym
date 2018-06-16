@@ -174,6 +174,12 @@ if (isset($_POST['name'])) {
                <td height="35">JOINING DATE:</td>
                <td height="35"><input type="date" id="boxxe" name="jdate" value=<?php echo $jdate?>></td>
              </tr>
+
+			<tr>
+               <td height="35">STREET NAME:</td>
+               <td height="35"><input type="text" id="boxxe" name="stname" value='<?php echo $streetname?>'></td>
+             </tr>
+
 			 <tr>
                <td height="35">STATE:</td>
                <td height="35"><input type="text" id="boxxe" name="state" value='<?php echo $state?>'></td>
