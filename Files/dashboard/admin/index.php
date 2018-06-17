@@ -164,7 +164,7 @@ page_protect();
 						<div class="num" data-postfix="" data-duration="1500" data-delay="0">
 						<h2>Total Plan Available</h2><br>	
 							<?php
-							$query = "select COUNT(*) from plan";
+							$query = "select COUNT(*) from plan where active='yes'";
 
 							//echo $query;
 							$result  = mysqli_query($con, $query);

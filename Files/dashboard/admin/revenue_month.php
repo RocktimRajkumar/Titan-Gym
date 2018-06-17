@@ -1,4 +1,5 @@
-﻿<?php
+﻿
+<?php
 require '../../include/db_conn.php';
 page_protect();
 ?>
@@ -129,7 +130,7 @@ page_protect();
 
 </form>
 
-<table id="memmonth">
+<table id="memmonth"border=2 style="font-size:15px;">
 	
 </table>
 

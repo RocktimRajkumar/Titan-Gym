@@ -20,12 +20,11 @@ $totalamount=0;
 if (mysqli_affected_rows($con) != 0) {
 
 	echo "<thead>
-				<tr><h2>
+				<tr>
 					<th>Sl.No</th>
 					<th>Member ID</th>
 					<th>Name</th>
 					<th>Contact</th>
-					<th>E-Mail</th>
 					<th>Gender</th>
 					<th>State</th>
 					<th>Paid_Date</th>
@@ -33,7 +32,6 @@ if (mysqli_affected_rows($con) != 0) {
 					<th>Plan_Name</th>
 					<th>Amount</th>
 					<th>Validity</th>
-					</h2>
 				</tr>
 	</thead>";
 
@@ -48,7 +46,6 @@ if (mysqli_affected_rows($con) != 0) {
 
                 echo "<td>" . $row['mobile'] . "</td>";
 
-                echo "<td>" . $row['email'] . "</td>";
 
                 echo "<td>" . $row['gender'] . "</td>";
 
@@ -72,7 +69,7 @@ if (mysqli_affected_rows($con) != 0) {
 
  	$monthName = date("F", mktime(0, 0, 0, $month, 10));
 
-    echo "<tr><td></td><td></td><td></td><td colspan=3><h3>Total Income on ".$monthName." is ₹".$totalamount."</h3></td></tr>";
+    echo "<tr><td colspan=11 align='center'><h3>Total Income on ".$monthName." is ₹".$totalamount."</h3></td></tr>";
 
 }
 else{

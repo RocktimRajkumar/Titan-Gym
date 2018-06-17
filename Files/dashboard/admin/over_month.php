@@ -20,18 +20,16 @@ $sno    = 1;
 if (mysqli_affected_rows($con) != 0) {
 
 	echo "<thead>
-				<tr><h2>
+				<tr>
 					<th>Sl.No</th>
 					<th>Member ID</th>
 					<th>Name</th>
 					<th>Contact</th>
-					<th>E-Mail</th>
 					<th>Gender</th>
 					<th>State</th>
 					<th>City</th>
 					<th>DOB</th>
 					<th>Joining_Date</th>
-					</h2>
 				</tr>
 	</thead>";
 
@@ -46,7 +44,6 @@ if (mysqli_affected_rows($con) != 0) {
 
                 echo "<td>" . $row['mobile'] . "</td>";
 
-                echo "<td>" . $row['email'] . "</td>";
 
                 echo "<td>" . $row['gender'] . "</td>";
 
@@ -67,7 +64,7 @@ if (mysqli_affected_rows($con) != 0) {
 else{
 	if($flag==0){
 		$monthName = date("F", mktime(0, 0, 0, $month, 10));
-		echo "<h2>No Data found On ".$monthName." ".$year."</h2";
+		echo "<h2>No Data found On ".$monthName." ".$year."</h2>";
 	}
 	else if($flag==1)
 		echo "<h2>No Data found On ".$year."</h2";

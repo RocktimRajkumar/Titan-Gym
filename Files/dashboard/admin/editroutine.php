@@ -17,6 +17,10 @@ page_protect();
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
 	<link href="a1style.css" rel="stylesheet" type="text/css">
 	<style>
+	#boxxe
+	{
+		width:126px;
+	}
     	.page-container .sidebar-menu #main-menu li#routinehassubopen > a {
     	background-color: #2b303a;
     	color: #ffffff;
@@ -122,8 +126,9 @@ page_protect();
 					                
 					                $sno++;
 					                
-					              echo '<td><a href="editdetailroutine.php?id='.$row['tid'].'"><input type="button" class="a1-btn a1-blue" value="Edit Routine" ></a></td>';
-								  echo '<td><a href="deleteroutine.php?id='.$row['tid'].'"><input type="button" class="a1-btn a1-blue" value="Delete Routine" ></a></td></tr>';
+					              echo '<td><a href="editdetailroutine.php?id='.$row['tid'].'"><input type="button" class="a1-btn a1-blue" id="boxxe" value="Edit Routine" ></a></td>';
+								 // echo '<td><a href="deleteroutine.php?id='.$row['tid'].'"><input type="button" class="a1-btn a1-blue" value="Delete Routine" ></a></td></tr>';
+								 echo "<td><form action='deleteroutine.php' method='post' onsubmit='return ConfirmDelete()'><input type='hidden' name='name' value='" . $row['tid'] . "'/><input type='submit' value='Delete' width='20px' id='boxxe' class='a1-btn a1-orange'/></form></td></tr>";
 									
 					                $uid = 0;
 					            

@@ -12,6 +12,7 @@ page_protect();
     <script type="text/javascript" src="../../js/Script.js"></script>
     <link rel="stylesheet" href="../../css/dashMain.css">
     <link rel="stylesheet" type="text/css" href="../../css/entypo.css">
+	<link href="a1style.css" rel="stylesheet" type="text/css">
      <style>
     	.page-container .sidebar-menu #main-menu li#overviewhassubopen > a {
     	background-color: #2b303a;
@@ -98,11 +99,11 @@ page_protect();
 		    }
 		    ?>
 		</select>
-	<input type="button" name="search" onclick="showMember();" value="Search">
+	<input type="button" class="a1-btn a1-blue" name="search" onclick="showMember();" value="Search">
 
 	</form>
 
-	<table id="meyear">
+	<table id="meyear" border=1>
 	
 	</table>
 
