@@ -35,7 +35,7 @@ $query="insert into users(username,gender,mobile,email,dob,joining_date,userid) 
             $query4="insert into health_status(uid) values('$memID')";
             if(mysqli_query($con,$query4)==1){
 
-              $query5="insert into address(id,streetName,state,city) values('$memID','$stname','$state','$city')";
+              $query5="insert into address(id,streetName,state,city,zipcode) values('$memID','$stname','$state','$city','$zipcode')";
               if(mysqli_query($con,$query5)==1){
                echo "<head><script>alert('Member Added ');</script></head></html>";
                echo "<meta http-equiv='refresh' content='0; url=new_entry.php'>";

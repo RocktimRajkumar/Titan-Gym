@@ -13,6 +13,7 @@ page_protect();
    $stname=$_POST['stname'];
    $state=$_POST['state'];
    $city=$_POST['city'];
+   $zipcode=$_POST['zipcode'];
    $calorie=$_POST['calorie'];
    $height=$_POST['height'];
    $weight=$_POST['weight'];
@@ -22,7 +23,7 @@ page_protect();
     $query1="update users set username='".$uname."',gender='".$gender."',mobile='".$mobile."',email='".$email."',dob='".$dob."',joining_date='".$jdate."' where userid='".$uid."'";
 
    if(mysqli_query($con,$query1)){
-     $query2="update address set streetName='".$stname."',state='".$state."',city='".$city."' where id='".$uid."'";
+     $query2="update address set streetName='".$stname."',state='".$state."',city='".$city."',zipcode='".$zipcode."' where id='".$uid."'";
      if(mysqli_query($con,$query2)){
         $query3="update health_status set calorie='".$calorie."',height='".$height."',weight='".$weight."',fat='".$fat."',remarks='".$remarks."' where uid='".$uid."'";
         if(mysqli_query($con,$query3)){

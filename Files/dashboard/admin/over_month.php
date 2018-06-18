@@ -40,7 +40,7 @@ if (mysqli_affected_rows($con) != 0) {
                 
                 echo "<td>" . $row['userid'] . "</td>";
 
-                echo "<td>" . $row['username'] . "</td>";
+                echo "<td width='25%'>" . $row['username'] . "</td>";
 
                 echo "<td>" . $row['mobile'] . "</td>";
 

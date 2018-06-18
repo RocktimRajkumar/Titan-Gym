@@ -99,7 +99,7 @@ page_protect();
 		    }
 		    ?>
 		</select>
-	<input type="button" class="a1-btn a1-blue" name="search" onclick="showMember();" value="Search">
+	<input type="button" class="a1-btn a1-blue"  style="margin-bottom:5px;" name="search" onclick="showMember();" value="Search">
 
 	</form>
 

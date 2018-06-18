@@ -121,6 +121,7 @@ if (isset($_POST['name'])) {
 				          	$streetname=$row['streetName'];
 				          	$state=$row['state'];
 				          	$city=$row['city'];  
+				          	$zipcode=$row['zipcode'];
 				            $calorie=$row['calorie'];
 				            $height=$row['height'];
 				            $weight=$row['weight'];
@@ -194,6 +195,10 @@ if (isset($_POST['name'])) {
 			 <tr>
                <td height="35">CITY:</td>
                <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $city?>'></td>
+             </tr>
+              <tr>
+               <td height="35">ZIPCODE:</td>
+               <td height="35"><input type="text" id="boxxe" readonly="" value='<?php echo $zipcode?>'></td>
              </tr>
 			 <tr>
                <td height="35">CALORIE:</td>
