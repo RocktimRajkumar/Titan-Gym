@@ -177,7 +177,7 @@ page_protect();
 
 						        echo "<td>" . $row1['planName'] . "</td>";
 
-						        echo "<td>" . $row1['description'] . "</td>";
+						        echo "<td width='380'>" . $row1['description'] . "</td>";
 
 						        echo "<td>" . $row1['validity'] . "</td>";
 

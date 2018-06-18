@@ -93,7 +93,7 @@ page_protect();
 					<th>S.No</th>
 					<th>Plan ID</th>
 					<th>Plan name</th>
-					<th>Details</th>
+					<th>Plan Details</th>
 					<th>Months</th>
 					<th>Rate</th>
 					<th>Action</th>
@@ -116,13 +116,13 @@ page_protect();
 					        echo "<tr><td>" . $sno . "</td>";
 					        echo "<td>" . $row['pid'] . "</td>";
 					        echo "<td>" . $row['planName'] . "</td>";
-					        echo "<td>" . $row['description'] . "</td>";
+					        echo "<td width='380'>" . $row['description'] . "</td>";
 					        echo "<td>" . $row['validity'] . "</td>";
 					        echo "<td>₹" . $row['amount'] . "</td>";
 					        
 					        $sno++;
 					        
-					        echo '<td><a href=edit_plan.php?id="'.$row['pid'].'"><input type="button" class="a1-btn a1-blue" id="boxxe" value="Edit Routine" ></a><form action="del_plan.php" method="post" onSubmit="return ConfirmDelete();"><input type="hidden" name="name" value="' . $msgid .'"/><input type="submit" id="button1" value="Delete Plan" class="a1-btn a1-orange"/></form></td></tr>';
+					        echo '<td><a href=edit_plan.php?id="'.$row['pid'].'"><input type="button" class="a1-btn a1-blue" id="boxxe" style="width:100%" value="Edit Plan" ></a><form action="del_plan.php" method="post" onSubmit="return ConfirmDelete();"><input type="hidden" name="name" value="' . $msgid .'"/><input type="submit" id="button1" value="Delete Plan" class="a1-btn a1-orange"/></form></td></tr>';
 					        
 							$msgid = 0;
 					    }

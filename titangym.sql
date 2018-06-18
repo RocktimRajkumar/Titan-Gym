@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 18/06/2018 16:50:51
+ Date: 18/06/2018 21:25:06
 */
 
 SET NAMES utf8mb4;
@@ -30,6 +30,11 @@ CREATE TABLE `address`  (
   INDEX `userID`(`id`) USING BTREE,
   CONSTRAINT `userID` FOREIGN KEY (`id`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES ('1529336794', '2069  Quarry Drive', 'NC', 'Greensboro', '27409');
 
 -- ----------------------------
 -- Table structure for admin
@@ -64,7 +69,12 @@ CREATE TABLE `enrolls_to`  (
   INDEX `plan_ID_idx`(`pid`) USING BTREE,
   CONSTRAINT `plan_ID` FOREIGN KEY (`pid`) REFERENCES `plan` (`pid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `user_ID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of enrolls_to
+-- ----------------------------
+INSERT INTO `enrolls_to` VALUES (1, 'POQKJC', '1529336794', '2018-06-18', '2018-07-18', 'yes');
 
 -- ----------------------------
 -- Table structure for health_status
@@ -81,7 +91,12 @@ CREATE TABLE `health_status`  (
   PRIMARY KEY (`hid`) USING BTREE,
   INDEX `userID_idx`(`uid`) USING BTREE,
   CONSTRAINT `uID` FOREIGN KEY (`uid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of health_status
+-- ----------------------------
+INSERT INTO `health_status` VALUES (1, NULL, NULL, NULL, NULL, NULL, '1529336794');
 
 -- ----------------------------
 -- Table structure for plan
@@ -90,13 +105,18 @@ DROP TABLE IF EXISTS `plan`;
 CREATE TABLE `plan`  (
   `pid` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `planName` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `description` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `description` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `validity` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `amount` int(10) NOT NULL,
   `active` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`pid`) USING BTREE,
   INDEX `pid`(`pid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of plan
+-- ----------------------------
+INSERT INTO `plan` VALUES ('POQKJC', 'Monthly Plan', 'A monthly subscription that unlocks the entire Gym Plan app and coach support on chat.', '1', 600, 'yes');
 
 -- ----------------------------
 -- Table structure for timetable
@@ -130,5 +150,10 @@ CREATE TABLE `users`  (
   UNIQUE INDEX `email`(`email`) USING BTREE,
   INDEX `userid`(`userid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES ('1529336794', 'Christiana Mayberry', 'Male', '3362013747', 'christiani@gmail.com', '1968-04-13', '2018-06-18');
 
 SET FOREIGN_KEY_CHECKS = 1;

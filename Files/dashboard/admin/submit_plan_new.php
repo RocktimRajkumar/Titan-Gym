@@ -9,7 +9,7 @@ page_protect();
     $amount = $_POST['amount'];
     
    //Inserting data into plan table
-    $query="insert into plan(pid,planName,description,validity,amount) values('$planid','$name','$desc','$planval','$amount')";
+    $query="insert into plan(pid,planName,description,validity,amount,active) values('$planid','$name','$desc','$planval','$amount','yes')";
    
    
 
