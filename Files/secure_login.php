@@ -1,13 +1,4 @@
-<?php
-$a = $_SERVER['HTTP_REFERER'];
 
-if (strpos($a, '/gym/') !== false) {
-    
-} else {
-    header("Location: ./");
-}
-
-?>
 <?php
 include './include/db_conn.php';
 
@@ -19,6 +10,26 @@ $pass_key = rtrim($_POST['pass_key']);
 
 $user_id_auth = stripslashes($user_id_auth);
 $pass_key     = stripslashes($pass_key);
+
+
+
+if($pass_key=="" &&  $user_id_auth==""){
+   echo "<head><script>alert('Username and Password can be empty');</script></head></html>";
+               echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+  
+}
+else if($pass_key=="" ){
+   echo "<head><script>alert('Password can be empty');</script></head></html>";
+               echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+  
+}
+else if($user_id_auth=="" ){
+   echo "<head><script>alert('Username can be empty');</script></head></html>";
+               echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+  
+}
+
+else{
 
 $user_id_auth = mysqli_real_escape_string($con, $user_id_auth);
 $pass_key     = mysqli_real_escape_string($con, $pass_key);
@@ -47,5 +58,6 @@ if ($count == 1) {
 } else {
     include 'index.php';
     echo "<html><head><script>alert('Username OR Password is Invalid');</script></head></html>";
+}
 }
 ?>
